@@ -8,18 +8,26 @@
 }
 body{
     transform: translateY(0px);
+    background-color: var(--White);
+}
+.hideOverflow{
     overflow: hidden;
 }
 :root{
+    --White: #ffffff;
     --Black: #101010;
     --LightGray: #dddddd;
     --LighterGray: #eeeeee;
     --Gray: #aaaaaa;
-    --Highlight: purple;
+    --Highlight: rgb(0, 30, 255);
     font-size: 0.85em;
 }
 ::-webkit-scrollbar{
     width: 0px;
+}
+::selection{
+    color: var(--White);
+    background-color: var(--Highlight);
 }
 
 #filterContainer{
@@ -51,21 +59,21 @@ body{
 }
 .allBtn.clicked{
     font-weight: 600;
-    background-color: rgb(37, 109, 255);
+    background-color: var(--Highlight);
     color: white;
 }
 
 #archiveContainer{
     width: 80vw;
-    column-gap: 20px;
-    row-gap: 60px;
+    column-gap: 0.8vw;
+    row-gap: 4vw;
 
     display: flex;
     flex-wrap: wrap;
 }
 .itemContainer{
-    width: calc(((80vw + 20px) / 4) - 20px);
-    height: calc(((80vw + 20px) / 4) - 20px);
+    width: calc(((80vw + 0.8vw) / 4) - 0.8vw);
+    height: calc(((80vw + 0.8vw) / 4) - 0.8vw);
     border-radius: 10px;
 }
 .itemContainer:hover .itemHoverInfo{
@@ -88,7 +96,7 @@ body{
     z-index: 10;
 }
 .itemInfoContainer{
-    height: 15%;
+    height: 2.5rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -134,18 +142,19 @@ body{
 
 .projectBanner{
     width: 100vw;
-    height: 600px;
+    height: calc(100vw * (3/10));
     background-color: gray;
     object-fit: cover;
 }
 .projectInfo{
     width: 100vw;
-    height: 400px;
 
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    padding-top: 4rem;
+    padding-bottom: 4rem;
 }
 .projectInfo a{padding: 5px;}
 .projectInfo a:hover{background-color: var(--Highlight); color: var(--LighterGray);}
@@ -223,14 +232,14 @@ body{
 
 .lineSeperator{width: 80%; height: 2px;border-radius: 2px; background-color: var(--LightGray); margin-left: 10%;}
 
-a{text-decoration: none;}
+a{text-decoration: none; color: var(--Black);}
 p{color: var(--Black); line-height: 1.8rem; font-size: 1.1rem; font-weight: 500;}
-h1{font-size: 1.4rem; font-weight: 800;}
-h2{font-size: 1.1rem; font-weight: 600;}
-h3{font-size: 0.9rem; font-weight: 500;}
-h4{font-size: 0.95rem; font-weight: 500; line-height: 1.5rem;}
-h5{font-size: 0.95rem;}
-h6{font-weight: 500; line-height: 1.1rem;}
+h1{font-size: 1.4rem; font-weight: 800;color: var(--Black);}
+h2{font-size: 1.1rem; font-weight: 600;color: var(--Black);}
+h3{font-size: 0.9rem; font-weight: 500;color: var(--Black);}
+h4{font-size: 0.95rem; font-weight: 500; line-height: 1.5rem;color: var(--Black);}
+h5{font-size: 0.95rem;color: var(--Black);}
+h6{font-weight: 500; line-height: 1.1rem;color: var(--Black);}
 
 
 header{
