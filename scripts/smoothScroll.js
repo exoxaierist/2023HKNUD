@@ -1,72 +1,63 @@
-let rawDelta = 0;
-let normalizedDelta = 0;
-let prevNormalizedDelta = 0;
-let finalValue = 0;
-let prevTransY;
-let prevTimeStamp,deltaTime;
-let body = document.querySelector("body");
-let iframe = document.querySelector("iframe");
-let amf;
+
+let html = document.documentElement;
+let body = document.body;
+var scrollAnimFrame = null;
+var scroller = {
+  target: document.querySelector("#scroll-container"),
+  ease: 0.05, // <= scroll speed
+  y: 0,
+  resizeRequest: 1,
+  scrollRequest: 0,
+};
+
+let prevScroll = 0;
+let deltaScroll = 0;
 
 
+window.addEventListener("load", onLoad);
 
-let smoothItems = document.querySelectorAll(".itemContainer");
-let drag = 0;
-let dragHistory = [0,0,0,0];
-
-window.addEventListener("wheel", function(e){
-    rawDelta = e.deltaY;
-})
-if(iframe != undefined){
-    iframe.addEventListener("wheel", function(e){
-        rawDelta = e.deltaY;
-    })
+function onLoad() {    
+  updateScroller();  
+  window.focus();
+  window.addEventListener("resize", onResize);
+  document.addEventListener("scroll", onScroll); 
 }
 
-window.onbeforeunload = function(){
-    cancelAnimationFrame(amf);
-    if(isNaN(parseFloat(finalValue)))localStorage.setItem("prevTransY",0);
-    else localStorage.setItem("prevTransY",finalValue.toString());
-}
-window.onload = function(){
-    finalValue = parseFloat(localStorage.getItem("prevTransY"));
-    //body.style.transform = prevTransY;
-    console.log("onload")
-    if(body.classList.contains("hideOverflow")){
-        body.style.overflow = "hidden";
-    }
-    Update(0);
-}
-
-function Update(timeStamp){
-    if(prevTimeStamp == undefined){
-        prevTimeStamp = timeStamp;
-    }
-    deltaTime = (timeStamp - prevTimeStamp)*0.001;
-    prevTimeStamp = timeStamp;
-    // smooth scroll
-    if(Math.abs(rawDelta) < Math.abs(normalizedDelta)) normalizedDelta += (0-normalizedDelta)*deltaTime*3;
-    normalizedDelta = normalizedDelta + (rawDelta-normalizedDelta)*deltaTime*2;
-    finalValue += normalizedDelta;
-    if(finalValue < 0) finalValue += 0-finalValue*15*deltaTime;
-    else if(finalValue > body.clientHeight-window.innerHeight) finalValue = finalValue + (body.clientHeight-window.innerHeight-finalValue)*20*deltaTime;
-    body.style.transform = "translateY(" + -finalValue + "px)"
-    prevTransY = body.style.transform;
-    rawDelta = 0;
-    prevNormalizedDelta = normalizedDelta;
+function updateScroller() {
+  
+  var resized = scroller.resizeRequest > 0;
     
-    dragHistory[0] += (normalizedDelta*2-dragHistory[0]);
-    dragHistory[1] += (normalizedDelta*1.8-dragHistory[1]);
-    dragHistory[2] += (normalizedDelta*-.1-dragHistory[2]);
-    dragHistory[3] += (normalizedDelta*1-dragHistory[3]);
-    
-    // item juice
-    if(smoothItems.length == 0) return;
-    for (let i = 0; i < smoothItems.length; i++) {
-        const element = smoothItems[i];
-        const col = i%4;
-        const row=[0,3,2,1];
-        element.style.transform = "translateY(" + -dragHistory[row[col]] + "px)"
-    }
-    amf = requestAnimationFrame(Update);
+  if (resized) {    
+    var height = scroller.target.clientHeight;
+    body.style.height = height + "px";
+    scroller.resizeRequest = 0;
+  }
+      
+  var scrollY = window.scrollY || html.scrollTop || body.scrollTop || 0;
+  deltaScroll = (scrollY - scroller.y) * scroller.ease;
+  scroller.y += deltaScroll;
+
+  if (Math.abs(scrollY - scroller.y) < 0.05 || resized) {
+    scroller.y = scrollY;
+    scroller.scrollRequest = 0;
+  }
+  
+  TweenLite.set(scroller.target, { 
+    y: -scroller.y 
+  });
+  scrollAnimFrame = scroller.scrollRequest > 0 ? requestAnimationFrame(updateScroller) : null;
+}
+
+function onScroll() {
+  scroller.scrollRequest++;
+  if (!scrollAnimFrame) {
+    scrollAnimFrame = requestAnimationFrame(updateScroller);
+  }
+}
+
+function onResize() {
+  scroller.resizeRequest++;
+  if (!scrollAnimFrame) {
+    scrollAnimFrame = requestAnimationFrame(updateScroller);
+  }
 }
