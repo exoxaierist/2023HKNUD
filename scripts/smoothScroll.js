@@ -2,7 +2,7 @@
 let html = document.documentElement;
 let body = document.body;
 var scrollAnimFrame = null;
-var scroller = {
+let scroller = {
   target: document.querySelector("#scroll-container"),
   ease: 0.05, // <= scroll speed
   y: 0,
