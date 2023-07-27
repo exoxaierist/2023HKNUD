@@ -75,7 +75,7 @@ function FilterHideItems(){
 }
 function FilterShowItems(){
     var temp = $(filterItems);
-    for (let i = 0; i < filterList.length; i++) {
+    for (let i = 0; i < filterGroupCount; i++) {
         temp = temp.filter(activeFilters[i].join(", "))
     }
     temp.fadeIn(filterFadeDuration);
