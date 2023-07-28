@@ -19,8 +19,8 @@ window.addEventListener("load", onLoad);
 function onLoad() {    
   updateScroller();  
   window.focus();
-  window.addEventListener("resize", onResize);
-  document.addEventListener("scroll", onScroll); 
+  //window.addEventListener("resize", onResize);
+  //document.addEventListener("scroll", onScroll); 
 }
 
 function updateScroller() {
@@ -43,7 +43,9 @@ function updateScroller() {
   }
 
   scroller.target.style.transform = "translateY("+-scroller.y+"px)";
-  scrollAnimFrame = scroller.scrollRequest > 0 ? requestAnimationFrame(updateScroller) : null;
+
+  requestAnimationFrame(updateScroller);
+  //scrollAnimFrame = scroller.scrollRequest > 0 ? requestAnimationFrame(updateScroller) : null;
 }
 
 function onScroll() {
