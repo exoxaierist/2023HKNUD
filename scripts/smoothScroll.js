@@ -41,10 +41,8 @@ function updateScroller() {
     scroller.y = scrollY;
     scroller.scrollRequest = 0;
   }
-  
-  TweenLite.set(scroller.target, { 
-    y: -scroller.y 
-  });
+
+  scroller.target.style.transform = "translateY("+-scroller.y+"px)";
   scrollAnimFrame = scroller.scrollRequest > 0 ? requestAnimationFrame(updateScroller) : null;
 }
 
