@@ -15,7 +15,7 @@ function Update(){
         left = Math.round(((((left*(i+rand))*(left+i*rand))*100)%1)*10)*0.15;
         top = deltaScroll>0?-(1-top):-top;
         TweenLite.set(element, {
-            y: deltaScroll*top*4*left
+            y: deltaScroll*top*2.5*left
             });
     }
     requestAnimationFrame(Update);
