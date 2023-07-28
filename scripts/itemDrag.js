@@ -11,12 +11,10 @@ function Update(){
     for (let i = 0; i < dragItems.length; i++) {
         const element = dragItems[i];
         let top = element.getBoundingClientRect().top / window.innerHeight;
-        let left = element.getBoundingClientRect().left / window.innerWidth;
-        left = Math.round(((((left*(i+rand))*(left+i*rand))*100)%1)*10)*0.15;
+        left = (((i*rand*i*rand)*0.1)%1)*10-5
         top = deltaScroll>0?-(1-top):-top;
-        TweenLite.set(element, {
-            y: deltaScroll*top*2.5*left
-            });
+        
+        element.style.transform = "translateY(" + ((deltaScroll*top*10)+0.35*left*deltaScroll) + "px)"
     }
     requestAnimationFrame(Update);
 }
