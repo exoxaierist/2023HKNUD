@@ -62,14 +62,6 @@ class Student:
         self.other2 = other2
         self.projects = projects
 
-
-# check if element is in list
-def check_list(item,list):
-    for data in list:
-        if item == data:
-            return True
-    return False
-
 # read idlist.csv
 with open(idcsv.removeprefix('/'),'r',encoding='UTF-8') as file:
     idcsvr = csv.reader(file)
@@ -92,8 +84,8 @@ for i in range(1,len(profilecsvr)):
         student_dict[profilecsvr[i][2]].interests[j] = student_dict[profilecsvr[i][2]].interests[j].strip()
 
 # parse project csv files
-for filename in os.listdir(cwd + projectcsv):
-    if check_list(filename.removesuffix(".csv"), idlist):
+for filename in os.listdir(cwd + projectcsv +"/"):
+    if filename.removesuffix(".csv") in idlist:
         # read csv file into list
         with open( projectcsv.removeprefix('/') + '/' + filename,'r',encoding="UTF-8") as file:
             csvr = csv.reader(file)
@@ -114,8 +106,6 @@ for filename in os.listdir(cwd + projectcsv):
         project_dict[filename.removesuffix(".csv")] = Project(csvr[1][1],csvr[3][1],csvr[4][1],csvr[5][1],students,student_id,student_role,comp)
 
 # get html snippets
-with open ("X/html_source/project_banner.txt",'r',encoding='UTF-8') as file:
-    html_project_banner = file.read()
 with open ("X/html_source/project_comp_header.txt",'r',encoding='UTF-8') as file:
     html_project_comp_header = file.read()
 with open ("X/html_source/project_comp_sub_header.txt",'r',encoding='UTF-8') as file:
@@ -137,9 +127,13 @@ with open ("X/html_source/project_student.txt",'r',encoding='UTF-8') as file:
 
 # create project html files
 for key, info in project_dict.items():
-    image_folder = image_root + '/' + key + '/'
+    print("writing : ", key)
     html = open(html_project_dir.removeprefix('/') + '/' + key + ".html",'w',encoding="UTF-8")
-    html.write(html_project_top.replace("$LECTURE",info.lecture).replace("$NAME",info.name).replace("$SLOGAN",info.slogan).replace("$DESC",info.desc).replace("$STUDENTS", ', '.join(info.students)))
+
+    students_html:str
+    for i,name in enumerate(info.students):
+        students_html += html_project_student.replace("$STUDENT")
+    html.write(html_project_top.replace("$CLASS",info.lecture).replace("$TITLE",info.name).replace("$MOTO",info.slogan).replace("$DESC",info.desc).replace("$STUDENTS_HTML", students_html))
 
     # composition
     for section in info.comp:
@@ -154,21 +148,23 @@ for key, info in project_dict.items():
             html.write(html_project_comp_description.replace("$CONTENT",section[1]))
         elif section[0] == "image":
             # image
-            html.write(html_project_comp_image.replace("$CONTENT",image_folder + section[1]))
-        elif section[0] == "youtube":
+            html.write(html_project_comp_image.replace("$CONTENT", section[1]).replace("$ID",key))
+        ##elif section[0] == "youtube":
             # youtube
-            html.write(html_project_comp_youtube.replace("$CONTENT",section[1]))
+            #html.write(html_project_comp_youtube.replace("$CONTENT",section[1]))
         elif section[0] == "vimeo":
             # vimeo
             html.write(html_project_comp_vimeo.replace("$CONTENT",section[1]))
         
     # add students
-    for index, studentid in enumerate(info.student_id):
-        snippet = html_project_student
-        snippet = snippet.replace("$NAME",info.students[index]).replace("$ROLE",info.student_role[index] if len(info.students)>1 else "").replace("$LINK",html_profile_dir + '/' + studentid + ".html")
+    #for index, studentid in enumerate(info.student_id):
+    #    snippet = html_project_student
+    #    snippet = snippet.replace("$NAME",info.students[index]).replace("$ROLE",info.student_role[index] if len(info.students)>1 else "").replace("$LINK",html_profile_dir + '/' + studentid + ".html")
 
     # add footer and other stuffs
     html.write(html_project_bottom)
+
+"""
 
 # edit archive html file
 with open(archive_html_src,'r',encoding='UTF-8') as file:
@@ -183,6 +179,6 @@ html = re.sub(r"<!--PROJECT LIST START-->(.*?)<!--PROJECT LIST END-->",f"<!--PRO
 with open(archive_html_src,'w',encoding='UTF-8') as file:
     file.write(html)
 
-
+"""
 
 print("-----DONE!-----")

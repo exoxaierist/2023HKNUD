@@ -1,5 +1,0 @@
------
-project banner
-$TITLE$
-$DESC$
------

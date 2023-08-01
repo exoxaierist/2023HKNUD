@@ -14,7 +14,7 @@ function Update(){
         left = (((i*rand*i*rand)*0.1)%1)*10-5
         top = deltaScroll>0?-(1-top):-top;
         
-        element.style.transform = "translateY(" + ((deltaScroll*top*10)+0.35*left*deltaScroll) + "px)"
+        element.style.transform = "translateY(" + ((deltaScroll*top*20)+0.7*left*deltaScroll)*0.2 + "px)"
     }
     requestAnimationFrame(Update);
 }

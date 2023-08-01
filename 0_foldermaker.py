@@ -3,7 +3,7 @@ import os
 import csv
 
 root = "/image/image_project"
-src = "/X/idlist.csv"
+src = "/X/idtest.csv"
 local_dir = os.getcwd()
 
 # read csv
@@ -17,3 +17,4 @@ os.makedirs(local_dir + root, exist_ok=True)
 # make each folder
 for i in range(5,len(csvr)):
     os.makedirs(local_dir + root + '/' + csvr[i][1], exist_ok=True)
+    print("created : ", csvr[i][1])
