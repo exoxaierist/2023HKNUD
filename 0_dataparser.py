@@ -4,7 +4,7 @@ import os
 import re
 
 # directories
-idcsv = "/X/idlist.csv"
+idcsv = "/X/idtest.csv"
 profilecsv = "/X/profilelist.csv"
 projectcsv = "/X/csvs"
 image_root = "/image/image_project"
@@ -94,7 +94,7 @@ for filename in os.listdir(cwd + projectcsv +"/"):
         students = []
         student_role = []
         student_id = []
-        for i in range(3,len(csvr[0])):
+        for i in range(4,len(csvr[0])):
             students.append(csvr[0][i])
             student_id.append(csvr[1][i])
             student_role.append(csvr[2][i])
@@ -130,10 +130,10 @@ for key, info in project_dict.items():
     print("writing : ", key)
     html = open(html_project_dir.removeprefix('/') + '/' + key + ".html",'w',encoding="UTF-8")
 
-    students_html:str
+    students_html:str = ""
     for i,name in enumerate(info.students):
-        students_html += html_project_student.replace("$STUDENT")
-    html.write(html_project_top.replace("$CLASS",info.lecture).replace("$TITLE",info.name).replace("$MOTO",info.slogan).replace("$DESC",info.desc).replace("$STUDENTS_HTML", students_html))
+        students_html += html_project_student.replace("$STUDENT",name)
+    html.write(html_project_top.replace("$CLASS",info.lecture).replace("$TITLE",info.name).replace("$MOTO",info.slogan).replace("$DESC",info.desc).replace("$STUDENTS_HTML", students_html).replace("$ID",key))
 
     # composition
     for section in info.comp:

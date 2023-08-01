@@ -5,10 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>$TITLE</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../style.css">
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css"/>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.2/TweenMax.min.js"></script>
-    <script src="scripts/smoothScroll.js" defer></script>
+    <script src="../scripts/smoothScroll.js" defer></script>
 </head>
 <body>
     <section class="viewport">
@@ -16,8 +16,8 @@
         <div id="scroll-container">
     
             <!--BANNER IMAGE-->
-            <img src="image/image_project/$ID/banner_pc.jpg" alt="" class="projectBanner">
-        
+            <img src="../image/image_project/$ID/banner_pc.jpg" alt="" class="projectBanner">
+            
             <!--PROJECT INFO-->
             <div class="projectInfo">
                 <div class="w80 aTop jLeft">
