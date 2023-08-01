@@ -44,3 +44,4 @@
             </div>
         
             <div class="lineSeperator"></div>
+            <div class="vGap50"></div>

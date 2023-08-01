@@ -1,15 +1,15 @@
-<div class="projectContainer" OnClick="location.href ='/projects/$ID.html'">
-                <div class="projectThumbnail">
-                    <div class="w100 h100 flex jLeft aBottom">
-                        <div class="projectHoverInfo">
-                            <div class="projectDescription">$DESC</div>
-                            <div class="projectStudents">$STUDENTS</div>
+
+                    <div class="itemContainer $FILTER" OnClick="location.href ='projects/$ID.html'">
+                        <div class="itemThumbnail">
+                            <div class="w100 h100 flex jLeft aBottom">
+                                <div class="itemHoverInfo">
+                                    <p>$DESC</p>
+                                    <h3>$STUDENTS</h3>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="itemInfoContainer">
+                            <h2>$TITLE</h2>
+                            <p class="cGray">$CATEGORY</p>
                         </div>
                     </div>
-                </div>
-                <div class="projectInfoContainer">
-                    <div class="projectName">$NAME</div>
-                    <div class="projectCategory">$CATEGORY</div>
-                </div>
-            </div>
-            

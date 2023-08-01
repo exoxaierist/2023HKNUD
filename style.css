@@ -16,10 +16,6 @@ body{
     position: fixed;
     height: 100vh;
     width: 100vw;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
 }
 #scroll-container{
     position: absolute;  
@@ -182,11 +178,18 @@ body{
     width: 80vw;
     height: calc(80vw * 9/16);
     margin-left: 10%;
-    padding-top: 50px;
     padding-bottom: 50px;
 }
 .compImage{
-    width: 100vw;
+    background-color: black;
+    font-size: 0px;
+    clear:both;
+}
+.compImage Img{
+    width: 100%;
+    object-fit: cover;
+    display: inline;
+    float: left;
 }
 .compSet1{
     width: 50%;
