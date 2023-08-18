@@ -202,12 +202,17 @@ with open("X/html_source/archive_project.txt",'r',encoding='UTF-8') as file:
 
 project_archive = ''
 for key,info in project_dict.items():
+
+    filterList = "filter" + key[:2].upper()
+
     project_archive += html_archive_project.\
         replace("$DESC",info.slogan).\
         replace("$STUDENTS",' '.join(info.students)).\
         replace("$TITLE",info.title).\
         replace("$CATEGORY",info.category).\
-        replace("$ID",key)
+        replace("$ID",key).\
+        replace("$FILTER",filterList)
+    
 html = re.sub(r"<!--PROJECT LIST START-->(.*?)<!--PROJECT LIST END-->",f"<!--PROJECT LIST START-->{project_archive}<!--PROJECT LIST END-->",html,flags=re.DOTALL)
 with open(archive_html_src,'w',encoding='UTF-8') as file:
     file.write(html)

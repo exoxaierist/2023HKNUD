@@ -67,6 +67,7 @@ function RefreshCombinedFilter(){
     FilterHideItems();
     setTimeout(FilterShowItems,filterFadeDuration-15);
     setTimeout(()=>filterTransiting=false,filterFadeDuration*2);
+    console.log(combinedFilter)
 }
 
 function FilterHideItems(){
