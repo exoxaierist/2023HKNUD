@@ -36,11 +36,65 @@ body{
     background-color: var(--Highlight);
 }
 
-#filterContainer{
+
+header{
     width: 80vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: start;
+}
+#headerContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: start;
+    gap: 1rem;
+}
+#logo{
+    width: 10vw;
+    height: 50px;
+    background-color: var(--LightGray);
+}
+#navContainer{
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+}
+.navMenu{
+    font-size: 1.3rem;
+    font-weight: 300;
+    transition-duration: 0.3s;
+    transition-delay: 0.1s;
+}
+.navMenu:hover{
+    font-weight: 900;
+    transition-duration: 0.1s;
+    transition-delay: 0s;
+}
+.navMenuCurrent{
+    font-size: 1.3rem;
+    font-weight: 900;
+    transition-duration: 0.3s;
+    transition-delay: 0.2s;
+}
+
+
+
+@media screen and (max-width:950px){
+}
+#filterContainer{
+    display: flex;
+    flex-direction: column;
+    width: 80vw;
+    align-items: start;
+    gap: 0rem;
+}
+.filterGroup{
     gap: 20px;
     display: flex;
-    
+    justify-content: end;
+    margin-top: 0.2rem;
 }
 .filterBtn{
     font-size: 1.1rem;
@@ -70,19 +124,51 @@ body{
     color: white;
 }
 
+
+
+
+
 #archiveContainer{
     width: 80vw;
     column-gap: 0.8vw;
-    row-gap: 4vw;
+    row-gap: 3.5rem;
 
     display: flex;
     flex-wrap: wrap;
 }
-.itemContainer{
-    width: calc(((80vw + 0.8vw) / 4) - 0.8vw);
-    height: calc(((80vw + 0.8vw) / 4) - 0.8vw);
-    border-radius: 10px;
+
+@media screen and (min-width:1200px){
+    .itemContainer{
+        width: calc(((80vw + 0.8vw) / 4) - 0.8vw);
+        height: calc(((80vw + 0.8vw) / 4) - 0.8vw);
+    }
 }
+@media screen and (min-width:950px) and (max-width:1199px){
+    .itemContainer{
+        width: calc(((80vw + 0.8vw) / 3) - 0.8vw);
+        height: calc(((80vw + 0.8vw) / 3) - 0.8vw);
+    }
+}
+@media screen and (max-width:945px){
+    .itemContainer{
+        width: calc(((90vw + 1.5vw) / 2) - 1.5vw);
+        height: calc(((90vw + 1.5vw) / 2) - 1.5vw);
+    }
+    #archiveContainer{
+        width: 90vw;
+        column-gap: 1.5vw;
+        row-gap: 3.5rem;
+    
+        display: flex;
+        flex-wrap: wrap;
+    }
+}
+@media screen and (max-width:550px){
+    .itemCategory{
+        display: none;
+    }
+}
+
 .itemContainer:hover .itemHoverInfo{
     opacity: 100%;
     transition-duration: 0.3s;
@@ -103,10 +189,11 @@ body{
     z-index: 10;
 }
 .itemInfoContainer{
+    padding-top: 0.5rem;
     height: 2.5rem;
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: start;
 }
 .itemHoverInfo{
     padding: 20px;
@@ -118,6 +205,15 @@ body{
     transition-duration: 1s;
     transition-delay: 0.05s;
 }
+.itemCategory{
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+
+
+
 
 
 #studentListContainer{
@@ -145,6 +241,11 @@ body{
     font-size: 1.5rem;
     letter-spacing: 0.14rem;
 }
+
+
+
+
+
 
 
 .projectBanner{
@@ -252,38 +353,16 @@ h3{font-size: 0.9rem; font-weight: 500;color: var(--Black);}
 h4{font-size: 0.95rem; font-weight: 500; line-height: 1.5rem;color: var(--Black);}
 h5{font-size: 0.95rem;color: var(--Black);}
 h6{font-weight: 500; line-height: 1.1rem;color: var(--Black);}
+.textOverflow{
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
 
 
-header{
-    position:fixed;
-    width: 10vw;
-    top: 130px;
-    left: 0px;
-    display: flex;
-}
-.navMenu{
-    margin-left: 20px;
-    margin-bottom: 10px;
 
-    font-size: 1.3rem;
-    font-weight: 300;
-    transition-duration: 0.3s;
-    transition-delay: 0.1s;
-}
-.navMenu:hover{
-    font-weight: 900;
-    transition-duration: 0.1s;
-    transition-delay: 0s;
-}
-.navMenuCurrent{
-    margin-left: 20px;
-    margin-bottom: 10px;
 
-    font-size: 1.3rem;
-    font-weight: 900;
-    transition-duration: 0.3s;
-    transition-delay: 0.2s;
-}
+
 
 footer{
     width: 100%;
