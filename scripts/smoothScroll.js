@@ -17,10 +17,14 @@ let prevTimeStamp,deltaTime;
 
 window.addEventListener("load", onLoad);
 
-function onLoad() {    
+function onLoad() {
+  
   updateScroller();  
   window.focus();
   window.addEventListener("resize", onResize);
+  let viewport = document.querySelector(".viewport")
+  viewport.style.overflow = "hidden;"
+  viewport.style.position = "fixed;"
 }
 
 function updateScroller(timeStamp) {
@@ -34,7 +38,7 @@ function updateScroller(timeStamp) {
     
   if (resized) {    
     var height = scroller.target.clientHeight;
-    body.style.height = height + "px";
+    //body.style.height = height + "px";
     scroller.resizeRequest = 0;
   }
       

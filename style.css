@@ -12,9 +12,8 @@ body{
     overflow-y: scroll;
 }
 .viewport {
-    overflow: hidden;
-    position: fixed;
-    height: 100vh;
+    overflow: visible;
+    position: initial;
     width: 100vw;
 }
 #scroll-container{
@@ -28,7 +27,7 @@ body{
     --LightGray: #dddddd;
     --LighterGray: #eeeeee;
     --Gray: #aaaaaa;
-    --Highlight: rgb(0, 30, 255);
+    --Highlight: rgb(255, 51, 102);
     font-size: 0.85em;
 }
 ::selection{
@@ -44,6 +43,15 @@ header{
     justify-content: space-between;
     align-items: start;
 }
+@media screen and (min-width:0px) and (max-width:950px){
+    header{
+        width: 90vw;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: start;
+    }
+}
 #headerContainer{
     display: flex;
     flex-direction: column;
@@ -52,7 +60,7 @@ header{
     gap: 1rem;
 }
 #logo{
-    width: 10vw;
+    width: 200px;
     height: 50px;
     background-color: var(--LightGray);
 }
@@ -77,30 +85,42 @@ header{
     font-weight: 900;
     transition-duration: 0.3s;
     transition-delay: 0.2s;
+    color: var(--Highlight);
 }
 
 
-
-@media screen and (max-width:950px){
-}
 #filterContainer{
     display: flex;
     flex-direction: column;
     width: 80vw;
     align-items: start;
-    gap: 0rem;
+    gap: 0.5rem;
 }
 .filterGroup{
-    gap: 20px;
+    column-gap: 5px;
     display: flex;
-    justify-content: end;
-    margin-top: 0.2rem;
+    justify-content: start;
+    flex-wrap: wrap;
+}
+@media screen and (max-width:950px){
+    #filterContainer{
+        display: flex;
+        flex-direction: column;
+        width: 90vw;
+        align-items: start;
+        gap: 2rem;
+    }
+    .filterGroup{
+        column-gap: 20px;
+        display: flex;
+        justify-content: center;
+    }
 }
 .filterBtn{
     font-size: 1.1rem;
     font-weight: 500;
     /*padding: 8px 12px 8px 12px; */
-    padding: 0px 3px;
+    padding: 8px 12px 8px 12px;
     border-width: 0px;
     border-radius: 0px;
     background-color:transparent
@@ -108,8 +128,8 @@ header{
 .filterBtn.clicked{
     font-weight: 900;
     border-bottom: 2px;
-    border-style: solid;
-    border-color: bla;
+    border-style: inset;
+    border-color: var(--Highlight);
 }
 .allBtn{
     font-weight: 400;
@@ -119,9 +139,9 @@ header{
     background-color: var(--LighterGray);
 }
 .allBtn.clicked{
-    font-weight: 600;
+    font-weight: 400;
     background-color: var(--Highlight);
-    color: white;
+    color: var(--White);
 }
 
 
@@ -246,8 +266,6 @@ header{
 
 
 
-
-
 .projectBanner{
     width: 100vw;
     height: calc(100vw * (3/10));
@@ -264,11 +282,23 @@ header{
     padding-top: 4rem;
     padding-bottom: 4rem;
 }
-.projectInfo a{padding: 5px;}
-.projectInfo a:hover{background-color: var(--Highlight); color: var(--LighterGray);}
+.projectInfo a{padding: 4px;transition-duration: 0.1s;}
+.projectInfo a:hover{
+    border-width: 0px 0px 3px 0px;
+    border-style: solid;
+    border-color: var(--Highlight);
+}
+.projectDesc{width:80%;}
 .projectTitle{
     font-size: 4rem;
     font-weight: 800;
+}
+@media screen and (max-width:600px){
+    .projectDetail{flex-direction: column; gap: 50px;}
+    .projectDesc{width: 100%;}
+    .projectTitle{
+        font-size: 2rem;
+    }
 }
 .nameContainer{
     display: flex;
@@ -315,6 +345,19 @@ header{
     font-size: 2.5rem;
     font-weight: 800;
 }
+.projectOther{
+    width: 80vw;
+    height: 2rem;
+    justify-content: left;
+    display: flex;
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+
+
+
+
 
 .w20{width: 20%;}
 .w30{width: 30%;}
@@ -328,6 +371,7 @@ header{
 .gap10{gap: 10px;}
 .gap20{gap: 20px;}
 .gap30{gap: 30px;}
+.vGap20{width: 100%; height: 50px;}
 .vGap50{width: 100%;height: 50px;}
 .vGap100{width: 100%;height: 100px;}
 .jCenter{justify-content: center;}
@@ -343,7 +387,7 @@ header{
 .cBlack{color: var(--Black);}
 .cGray{color:var(--Gray)}
 
-.lineSeperator{width: 80%; height: 2px;border-radius: 2px; background-color: var(--LightGray); margin-left: 10%;}
+.lineSeperator{width: 80%; height: 1px;border-radius: 2px; background-color: var(--Black); margin-left: 10%;}
 
 a{text-decoration: none; color: var(--Black);}
 p{color: var(--Black); line-height: 1.8rem; font-size: 1.1rem; font-weight: 500;}
@@ -365,11 +409,14 @@ h6{font-weight: 500; line-height: 1.1rem;color: var(--Black);}
 
 
 footer{
-    width: 100%;
-    height: 80px;
+    width: 80vw;
+    padding-left: 10vw;
+    padding-right: 10vw;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
 
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     background-color: var(--LighterGray);
 }
@@ -379,5 +426,27 @@ footer{
     background-color: purple;
     object-fit: contain; 
 }
-footer a{padding: 5px;}
-footer a:hover{background-color: var(--Highlight); color: var(--LighterGray);}
+.footerLinks{
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+footer a{padding: 10px; transition-duration: 0.2s; font-weight: 400;}
+footer a:hover{font-weight: 900; color: var(--Highlight);}
+
+@media screen and (max-width:1200px){
+    footer{
+        width: 80vw;
+        padding-left: 10vw;
+        padding-right: 10vw;
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: start;
+        gap: 1rem;
+        background-color: var(--LighterGray);
+    }
+}

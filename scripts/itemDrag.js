@@ -1,5 +1,5 @@
 let dragItems = document.querySelectorAll(".itemContainer");
-let rand = 150;
+let rand = 150; 
 let refresh = true;
 
 Update();

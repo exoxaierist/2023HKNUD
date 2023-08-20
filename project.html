@@ -6,8 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HKNU 2023 Design Archive</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css"/>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.2/TweenMax.min.js"></script>
     <script src="scripts/smoothScroll.js" defer></script>
 </head>
 <body>
@@ -24,8 +22,8 @@
                     <div class="projectTitle">프로젝트 이름 - PROJECT TITLE</div>
                 </div>
                 <div class="vGap50"></div>
-                <div class="flex w80 aTop jBetween gap10">
-                    <div class="w30">
+                <div class="flex w80 aTop jBetween projectDetail">
+                    <div>
                         <h1>참여자</h1>
                         <br>
                         <div class="nameContainer">
@@ -36,7 +34,7 @@
                             <h2><a href="">김갑수</a></h2>
                         </div>
                     </div>
-                    <div class="w70">
+                    <div class="projectDesc">
                         <h1>슬로건</h1>
                         <br>
                         <p>
@@ -51,7 +49,7 @@
             <!--DESCRIPTION-->
         
             <!--Youtube-->
-            <iframe src="https://www.youtube.com/embed/HsMjmYtSJFc" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen class="compYoutube"></iframe>
+            <iframe src="https://www.youtube.com/embed/vPPuVek6vWU" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen class="compYoutube"></iframe>
             
             <!--Vimeo-->
             <iframe src="https://player.vimeo.com/video/166807261" width="640" height="272" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen class="compYoutube"></iframe>
@@ -60,7 +58,7 @@
             <img src="" alt="" class="compImage">
             
             <!--Comp Set 1 (title+subtitle+desc)-->
-            <div class="compSet1" data-aos="fade-right" data-aos-offset="350" data-aos-duration="500">
+            <div class="compSet1">
                 <div class="compTitle">수정가능) 큰 문자 Large Text</div>
                 <h1>수정가능) 중간 문자 Medium Text</h1>
                 <br>
@@ -72,7 +70,7 @@
             <img src="" alt="" class="compImage">
             
             <!--Comp Set 2 (subtitle + desc)-->
-            <div class="compSet2" data-aos="fade-right" data-aos-offset="350" data-aos-duration="500">
+            <div class="compSet2">
                 <h1>수정가능) 중간 문자 Medium Text</h1>
                 <br>
                 <p>
@@ -82,27 +80,80 @@
             <img src="" alt="" class="compImage">
             
             <!--Comp Set 3 (Title+Subtitle)-->
-            <div class="compSet3" data-aos="fade-right" data-aos-offset="350" data-aos-duration="500">
+            <div class="compSet3">
                 <div class="compTitle">수정가능) 큰 문자 Large Text</div>
                 <h1>수정가능) 중간문자 Medium Text</h1>
             </div>
             <img src="" alt="" class="compImage">
             <div class="vGap50"></div>
             
-            
+            <div class="flex jCenter">
+                <div class="projectOther">다른 프로젝트 보기</div>
+            </div>
+
+            <div class="vGap50"></div>
+        
+            <div class="flex jCenter">
+
+                <div id="archiveContainer">
+                    <div class="itemContainer filterDP filter3d" OnClick="location.href ='project.html'">
+                        <div class="itemThumbnail">
+                            <div class="w100 h100 flex jLeft aBottom">
+                                <div class="itemHoverInfo textOverflow">
+                                    <p class="textOverflow">(예시)슬로건이나 한줄설명</p>
+                                    <h3 class="textOverflow">조한민 김말뚝 홍갑쇠 엄치욱</h3>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="itemInfoContainer">
+                            <h2 class="textOverflow">바나나 오징어 시계 열기구</h2>
+                            <p class="cGray itemCategory">Branding</p>
+                        </div>
+                    </div><div class="itemContainer filterDP filter3d" OnClick="location.href ='project.html'">
+                        <div class="itemThumbnail">
+                            <div class="w100 h100 flex jLeft aBottom">
+                                <div class="itemHoverInfo textOverflow">
+                                    <p class="textOverflow">(예시)슬로건이나 한줄설명</p>
+                                    <h3 class="textOverflow">조한민 김말뚝 홍갑쇠 엄치욱</h3>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="itemInfoContainer">
+                            <h2 class="textOverflow">바나나 오징어 시계 열기구</h2>
+                            <p class="cGray itemCategory">Branding</p>
+                        </div>
+                    </div><div class="itemContainer filterDP filter3d" OnClick="location.href ='project.html'">
+                        <div class="itemThumbnail">
+                            <div class="w100 h100 flex jLeft aBottom">
+                                <div class="itemHoverInfo textOverflow">
+                                    <p class="textOverflow">(예시)슬로건이나 한줄설명</p>
+                                    <h3 class="textOverflow">조한민 김말뚝 홍갑쇠 엄치욱</h3>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="itemInfoContainer">
+                            <h2 class="textOverflow">바나나 오징어 시계 열기구</h2>
+                            <p class="cGray itemCategory">Branding</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="vGap100"></div>
+            <div class="vGap100"></div>
             
             <!--FOOTER-->
-            <footer>
-                <div class="w80 flex aCenter jBetween">
+            <div class="flex jCenter aCenter">
+                <footer>
                     <div class="flex aCenter gap20">
                         <img src="" alt="" class="footerLogo">
                         <h4>
                             2023 한경국립대학교 디자인학과
                             <br>
-                            제 26회 졸업전시회 : 
+                            제 26회 졸업전시회 : A Star
                         </h4>
                     </div>
-                    <div class="flex gap20">
+                    <div class="footerLinks">
                         <p><a href="https://www.instagram.com/hknudesign.show/" target="_blank">Instagram</a></p>
                         <p><a href="https://www.facebook.com/hkdesign.show" target="_blank">Facebook</a></p>
                         <p><a href="https://www.youtube.com/c/hknudesign/featured" target="_blank">Youtube</a></p>
@@ -117,14 +168,9 @@
                             ⓒ 2023 HKNUDESIGN. All rights reserved
                         </h6>
                     </div>
-                </div>
-            </footer>
+                </footer>
+            </div>
         </div>
     </section>
-
-    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-    <script>
-        AOS.init();
-    </script>
 </body>
 </html>
