@@ -28,6 +28,7 @@ body{
     --LighterGray: #eeeeee;
     --Gray: #aaaaaa;
     --Highlight: rgb(255, 51, 102);
+    --HighlightTrans: rgb(255, 51, 102,0);
     font-size: 0.85em;
 }
 ::selection{
@@ -89,6 +90,143 @@ header{
 }
 
 
+
+
+
+
+
+#navOverlay{
+    position: fixed;
+    top: 0px;
+    height: 0px;
+    width: 100vw;
+    height: 30vh;
+    backdrop-filter: blur(7px);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom-width: 2px;
+    border-color: var(--Highlight);
+    border-bottom-style: solid;
+}
+.navXBtn{
+    position: absolute;
+    top: 100px;
+    left: 5vw;
+}
+
+
+
+
+#navOverlayBtnGroup{
+    position: relative;
+    width: 80vw;
+    height: 50px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.navOverlayBtn{
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    
+    width: calc(((80vw + 0.8vw) / 4) - 0.8vw);
+}
+.navOverlayBtnCurrent{
+    border-bottom: solid 5px var(--Highlight);
+}
+.navOverlayBtnBackground{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 100%;
+    transition-duration: 0.2s;
+    transition-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);
+    background-color: var(--Highlight);
+    pointer-events: none;
+    z-index: -1;
+}
+.navOverlayBtn:hover .navOverlayBtnBackground{
+    top: 0%;
+}
+.navOverlayBtnText{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    font-size: 1.3rem;
+    font-weight: 800;
+    transition-duration: 0.1s;
+}
+.navOverlayBtn:hover .navOverlayBtnText{
+    color: var(--White);
+    margin-left: 1rem;
+    font-size: 1.4rem;
+    font-weight: 200;
+}
+.arrowGroup{
+    position: fixed;
+    top: 0px;
+    left: 0px;
+}
+.arrowGlobal{
+    position: absolute;
+    transform-origin: left top;
+    scale: 0 1;
+    height: 0px;
+    border-top: solid var(--Black) 2px;
+    transition-duration: 0.1s;
+    transition-delay: 0.05s;
+}
+.circleGlobal{
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    border-radius: 5px;
+    background-color: black;
+    scale: 0;
+    transition-duration: 0.2s;
+    transform-origin: center center;
+    margin-top: -5px;
+    margin-left: -5px;
+}
+.pGroup{
+    position: relative;
+    top: 400px;
+    left: 200px;
+}
+.arrowLine{
+    top: 50px;
+    left: 90vw;
+    width: 700px;
+    rotate: 170deg;
+    transition-duration: 0.2s;
+}
+.arrowTarget{
+    margin-right: 30%;
+}
+.navOverlayBtn:hover .arrowGlobal{
+    scale: 1 1;
+}
+.navOverlayBtn:hover .circleGlobal{
+    scale: 1;
+}
+.delay1{transition-delay: 0.1s;}
+.delay2{transition-delay: 0.2s;}
+.delay3{transition-delay: 0.3s;}
+.delay4{transition-delay: 0.4s;}
+
+
+
+
+
+
+
 #filterContainer{
     display: flex;
     flex-direction: column;
@@ -142,6 +280,11 @@ header{
     font-weight: 400;
     background-color: var(--Highlight);
     color: var(--White);
+}
+
+
+.classDesc{
+    width: 40vw;
 }
 
 
@@ -383,6 +526,7 @@ header{
 .aTop{align-items: flex-start;}
 .aBottom{align-items: flex-end;}
 
+.bgGray{background-color: var(--Gray);}
 .bgLighterGray{background-color: var(--LighterGray);}
 .cBlack{color: var(--Black);}
 .cGray{color:var(--Gray)}
