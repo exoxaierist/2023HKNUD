@@ -16,6 +16,15 @@ let navXbtn = document.querySelector(".navXBtn");
 let overlayState = false;
 
 $(".overlayToggle").on("click",ToggleOverlay)
+window.onscroll = ScrollCloseOverlay;
+
+
+
+function ScrollCloseOverlay(){
+    if(overlayState){
+        ToggleOverlay();
+    }
+}
 
 function ToggleOverlay(){
     if(overlayState){
@@ -23,13 +32,14 @@ function ToggleOverlay(){
         navOverlay.style.top = "-30vh";
         overlayState = false;
         navXbtn.style.rotate = "0deg";
+        document.querySelector(".navOverlayCancel").style.display = "none";
     }
     else{
         //open
         navOverlay.style.top = "0vh";
         overlayState = true;
         navXbtn.style.rotate = "135deg";
-
+        document.querySelector(".navOverlayCancel").style.display = "initial";
     }
 }
 

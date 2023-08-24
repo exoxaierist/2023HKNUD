@@ -106,6 +106,7 @@ header{
     height: 75vh;
     width: 100vw;
     top: 25vh;
+    display: none;
 }
 .navXContainer{
     position: fixed;
