@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HKNU 2023 Design Archive</title>
+    <title>HKNUD 2023</title>
     <link rel="stylesheet" href="style.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="scripts/archiveFilter.js" defer></script>
@@ -16,23 +16,7 @@
     <section class="viewport">
         
         <div id="scroll-container">
-            <div class="vGap50"></div>
-            <!--HEADER--> 
-            <!--  
-            <div class="flexcol jCenter aCenter">
-                <header>
-                    <div id="headerContainer">
-                        <img src="" alt="" id="logo">
-                        <div id="navContainer">
-                            <a href=""><div class="navMenu textOverf">home</div></a>
-                            <div class="navMenuCurrent textOverf">projects</div>
-                            <a href="students.html"><div class="navMenu textOverflow">students</div></a>
-                            <a href=""><div class="navMenu textOverf">guestbook</div></a>
-                        </div>
-                    </div>
-                </header>
-            </div>-->
-            <div class="vGap50"></div>
+            <div id="pageID" class="overlayToggle">Projects</div>
             <div class="flex jCenter aCenter">
                 <div class="w80 flexcol aStart gap30">
                     <!--FILTER-->
@@ -639,76 +623,103 @@
 
 
 
-
+    <!--NAVIGATION-->
     <div id="navOverlay">
-        <div class="navXBtn">
-            <div class="arrowGlobal" style="width: 60px; left: -30px; rotate:90deg; scale: 1 1 !important;"></div>
-            <div class="arrowGlobal" style="width: 60px; left: -30px; scale: 1 1 !important;"></div>
-        </div>
         <div class="vgap50"></div>
-        <div class="w80 flex jLeft"><img src="" alt="" class="bgGray" style="width: 400px;height: 110px;opacity: 50%;"></div>
+        <div class="w80 flex jLeft"><img src="" alt="" class="bgGray" style="width: 300px;height: 50px;opacity: 50%;"></div>
+        
         <div id="navOverlayBtnGroup">
-            <div class="navOverlayBtn"">
+            <div class="navOverlayBtn">
                 <div class="navOverlayBtnBackground"></div>
-                <div class="navOverlayBtnText">Home <div class="arrowTarget"></div></div>
-                <div class="arrowGroup">
-                    <div class="circleGlobal"style="left:90vw;top:50px;"></div>
-                    <div class="arrowLine arrowGlobal"></div>
-                    <div class="pGroup">
-                        <div class="circleGlobal delay1"></div>
-                        <div class="arrowGlobal delay4" style="width: 60px; rotate:-90deg"></div>
-                        <div class="arrowGlobal delay3" style="width: 60px; rotate:0deg"></div>
-                        <div class="circleGlobal delay2" style="top: -60px;"></div>
-                        <div class="circleGlobal delay2" style="left: 60px;"></div>
+                <div class="navOverlayBtnText">Home
+                    <div class="arrowTarget">
+                        <div class="pGroup">
+                            <div class="circleGlobal delay1"></div>
+                            <div class="arrowGlobal delay4" style="width: 60px; rotate:-90deg"></div>
+                            <div class="arrowGlobal delay3" style="width: 60px; rotate:0deg"></div>
+                            <div class="circleGlobal delay2" style="top: -60px;"></div>
+                            <div class="circleGlobal delay2" style="left: 60px;"></div>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="navOverlayBtn navOverlayBtnCurrent">
-                <div class="navOverlayBtnBackground"></div>
-                <div class="navOverlayBtnText">Projects <div class="arrowTarget"></div></div>
                 <div class="arrowGroup">
-                    <div class="circleGlobal"style="left:90vw;top:50px;"></div>
+                    <div class="circleGlobal arrowCircle"style="left:90vw;top:50px;"></div>
                     <div class="arrowLine arrowGlobal"></div>
-                    <div class="pGroup">
-                        <div class="circleGlobal delay1"></div>
-                        <div class="arrowGlobal delay3" style="width: 60px; rotate:-90deg"></div>
-                        <div class="arrowGlobal delay4" style="width: 60px; rotate:0deg"></div>
-                        <div class="circleGlobal delay2" style="top: -60px;"></div>
-                        <div class="circleGlobal delay2" style="left: 60px;"></div>
-                    </div>
+                    
                 </div>
             </div>
-            <div class="navOverlayBtn"">
+            <div class="navOverlayBtn navOverlayBtnCurrent overlayToggle">
                 <div class="navOverlayBtnBackground"></div>
-                <div class="navOverlayBtnText">Students <div class="arrowTarget"></div></div>
-                <div class="arrowGroup">
-                    <div class="circleGlobal"style="left:90vw;top:50px;"></div>
-                    <div class="arrowLine arrowGlobal"></div>
-                    <div class="pGroup">
-                        <div class="circleGlobal delay1"></div>
-                        <div class="arrowGlobal delay3" style="width: 60px; rotate:-90deg"></div>
-                        <div class="arrowGlobal delay3" style="width: 60px; rotate:0deg"></div>
-                        <div class="circleGlobal delay2" style="top: -60px;"></div>
-                        <div class="circleGlobal delay2" style="left: 60px;"></div>
+                <div class="navOverlayBtnText">Projects
+                    <div class="arrowTarget">
+                        <div class="pGroup">
+                            <div class="circleGlobal delay1"></div>
+                            <div class="arrowGlobal delay3" style="width: 60px; rotate:-90deg"></div>
+                            <div class="arrowGlobal delay4" style="width: 60px; rotate:0deg"></div>
+                            <div class="circleGlobal delay2" style="top: -60px;"></div>
+                            <div class="circleGlobal delay2" style="left: 60px;"></div>
+                        </div>
                     </div>
+                </div>
+                <div class="arrowGroup">
+                    <div class="circleGlobal arrowCircle"style="left:90vw;top:50px;"></div>
+                    <div class="arrowLine arrowGlobal"></div>
                 </div>
             </div>
             <div class="navOverlayBtn"">
                 <div class="navOverlayBtnBackground"></div>
-                <div class="navOverlayBtnText">About <div class="arrowTarget"></div></div>
-                <div class="arrowGroup">
-                    <div class="circleGlobal"style="left:90vw;top:50px;"></div>
-                    <div class="arrowLine arrowGlobal"></div>
-                    <div class="pGroup">
-                        <div class="circleGlobal delay1"></div>
-                        <div class="arrowGlobal delay4" style="width: 60px; rotate:-90deg"></div>
-                        <div class="arrowGlobal delay3" style="width: 60px; rotate:0deg"></div>
-                        <div class="circleGlobal delay2" style="top: -60px;"></div>
-                        <div class="circleGlobal delay2" style="left: 60px;"></div>
+                <div class="navOverlayBtnText">Students
+                    <div class="arrowTarget">
+                        <div class="pGroup">
+                            <div class="circleGlobal delay1"></div>
+                            <div class="arrowGlobal delay3" style="width: 60px; rotate:-90deg"></div>
+                            <div class="arrowGlobal delay3" style="width: 60px; rotate:0deg"></div>
+                            <div class="circleGlobal delay2" style="top: -60px;"></div>
+                            <div class="circleGlobal delay2" style="left: 60px;"></div>
+                        </div>
                     </div>
                 </div>
+                <div class="arrowGroup">
+                    <div class="circleGlobal arrowCircle"style="left:90vw;top:50px;"></div>
+                    <div class="arrowLine arrowGlobal"></div>
+                </div>
             </div>
+            <div class="navOverlayBtn"">
+                <div class="navOverlayBtnBackground"></div>
+                <div class="navOverlayBtnText">About
+                    <div class="arrowTarget">
+                        <div class="pGroup" style="margin-left: -6px;">
+                            <div class="circleGlobal delay1"></div>
+                            <div class="arrowGlobal delay4" style="width: 60px; rotate:-90deg"></div>
+                            <div class="arrowGlobal delay3" style="width: 60px; rotate:0deg"></div>
+                            <div class="circleGlobal delay2" style="top: -60px;"></div>
+                            <div class="circleGlobal delay2" style="left: 60px;"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="arrowGroup">
+                    <div class="circleGlobal arrowCircle"style="left:90vw;top:50px;"></div>
+                    <div class="arrowLine arrowGlobal"></div>
+                    
+                </div>
+            </div>
+        </div>
+
+        <div class="navOverlayCancel overlayToggle"></div>
+
+    </div>
+    <div class="navXContainer">
+        <div class="navXBtn overlayToggle">
+            <div class="arrowGlobal" style="width: 50px; left: 26px; rotate:90deg; scale: 1 1 !important; position: relative !important;"></div>
+            <div class="arrowGlobal" style="width: 50px; top: 24px; scale: 1 1 !important; position: relative !important;"></div>
+            <div class="circleGlobal"style="left:5px;top:26px; scale:1 !important"></div>
+            <div class="circleGlobal"style="left:45px;top:26px; scale:1 !important"></div>
+            <div class="circleGlobal"style="left:25px;top:5px; scale:1 !important"></div>
+            <div class="circleGlobal"style="left:25px;top:45px; scale:1 !important"></div>
         </div>
     </div>
+
+
+
 </body>
 </html>
