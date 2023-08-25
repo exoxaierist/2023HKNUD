@@ -58,8 +58,8 @@ function updateScroller(timeStamp) {
   
   OnScroll();
 
-  setTimeout(updateScroller,(1/60) * 1000);
-  //requestAnimationFrame(updateScroller);
+  //setTimeout(updateScroller,(1/60) * 1000);
+  requestAnimationFrame(updateScroller);
 }
 
 function onResize() {

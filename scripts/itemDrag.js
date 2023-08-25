@@ -13,6 +13,6 @@ function UpdateItemDrag(){
         let top = element.getBoundingClientRect().top / window.innerHeight;
         left = (((i*rand*i*rand)*0.1)%1)*10-5
         top = deltaScroll>0?-(1-top):-top;
-        element.style.transform = "translateY(" + ((unscaledDeltaScroll*top*9)+0.2*left*unscaledDeltaScroll)*0.001 + "vw)"
+        element.style.transform = "translateY(" + ((unscaledDeltaScroll*top*3)+0.15*left*unscaledDeltaScroll)*0.001 + "vw)"
     }
 }
