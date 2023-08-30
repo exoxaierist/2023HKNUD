@@ -309,18 +309,21 @@ header{
 
 @media screen and (min-width:1200px){
     .itemContainer{
+        display: none;
         width: calc(((80vw + 0.8vw) / 4) - 0.8vw);
         height: calc(((80vw + 0.8vw) / 4) - 0.8vw);
     }
 }
 @media screen and (min-width:950px) and (max-width:1199px){
     .itemContainer{
+        display: none;
         width: calc(((80vw + 0.8vw) / 3) - 0.8vw);
         height: calc(((80vw + 0.8vw) / 3) - 0.8vw);
     }
 }
 @media screen and (max-width:945px){
     .itemContainer{
+        display: none;
         width: calc(((90vw + 1.5vw) / 2) - 1.5vw);
         height: calc(((90vw + 1.5vw) / 2) - 1.5vw);
     }
