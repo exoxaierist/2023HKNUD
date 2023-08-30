@@ -5,6 +5,7 @@ let filterAllBtns = document.querySelectorAll(".allBtn");
 let filterItems = $(".itemContainer");
 let filterTransiting = false;
 let filterFadeDuration = 150;
+let classDescs = $(".classDesc");
 const filterGroupCount = 2;
 
 
@@ -16,7 +17,6 @@ for (let i = 0; i < filterGroupCount; i++) {
     SelectAll(i);
 }
 
-
 $(".filterBtn").click(function(){
     OnClick($(this));
 })
@@ -24,6 +24,9 @@ $(".filterBtn").click(function(){
 $(".allBtn").click(function(){
     SelectAll($(this).attr("filterGroup"));
 })
+
+
+
 
 function OnClick(element){
     const group = parseInt($(element).attr("filterGroup"));
@@ -42,6 +45,27 @@ function OnClick(element){
     }else {
         activeFilters[group].push("."+filter);
         $(element).addClass("clicked");
+
+        if(filter == "filterDP"){
+            SelectClass("filterDP",element);
+            classDescs.fadeOut(0);
+            classDescs.eq(0).fadeIn(0);
+        }
+        else if(filter == "filterBM"){
+            SelectClass("filterBM",element);
+            classDescs.fadeOut(0);
+            classDescs.eq(1).fadeIn(0);
+        }
+        else if(filter == "filterVP"){
+            SelectClass("filterVP",element);
+            classDescs.fadeOut(0);
+            classDescs.eq(2).fadeIn(0);
+        }
+        else if(filter == "filterIB"){
+            SelectClass("filterIB",element);
+            classDescs.fadeOut(0);
+            classDescs.eq(3).fadeIn(0);
+        }
     }
 
     // empty or all filter; enable all btn
@@ -51,11 +75,21 @@ function OnClick(element){
 }
 
 function SelectAll(group){
+    if(group==0){classDescs.fadeOut(0)}
     activeFilters[group] = filterList[group];
     $(filterAllBtns[group]).addClass("clicked");
     $(".filterBtn").each(function(){
         if($(this).attr("filterGroup") == group) $(this).removeClass("clicked");
     })
+    RefreshCombinedFilter();
+}
+
+function SelectClass(filter,element){
+    activeFilters[0] = ["." + filter];
+    $(".filterBtn").each(function(){
+        if($(this).attr("filterGroup") == 0) $(this).removeClass("clicked");
+    })
+    element.addClass("clicked");
     RefreshCombinedFilter();
 }
 
