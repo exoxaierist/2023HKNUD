@@ -1,4 +1,5 @@
 @import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.6/dist/web/static/pretendard.css");
+@import url('https://fonts.cdnfonts.com/css/ocr-a-std');
 
 *{
     margin: 0px;
@@ -8,18 +9,17 @@
 }
 body{
     background-color: var(--White);
-    overflow-x: hidden;
-    overflow-y: scroll;
+    overflow: visible;
 }
 .viewport {
-    overflow: visible;
-    position: initial;
+    position: fixed;
+    overflow-y: visible;
+    overflow-x: hidden;
     width: 100vw;
+    height: 100vh;
 }
 #scroll-container{
-    position: absolute;  
-    overflow: hidden;
-    width: 100vw;
+    position: absolute;
 }
 :root{
     --White: #ffffff;
@@ -35,6 +35,18 @@ body{
 ::selection{
     color: var(--White);
     background-color: var(--Highlight);
+}
+::-webkit-scrollbar{
+    width: 5px;
+    background-color: transparent;
+    border-left: solid 1px var(--Gray);
+}
+::-webkit-scrollbar-thumb{
+    background-color: var(--Gray);
+    border-radius: 1px;
+}
+::-webkit-scrollbar-track{
+    background-color: transparent;
 }
 
 
@@ -349,11 +361,19 @@ header{
 .itemThumbnail{
     width: 100%;
     height: 100%;
+    position: relative;
     background-color: var(--LightGray);
+    background-size: cover;
     box-shadow: inset 0px 0px 0px 0px rgba(0, 0, 0, 0);
     transition-property: box-shadow transform;
     transition-delay: 0.05s;
     transition-duration: 0.6s;
+}
+.itemThumbnailImg{
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    position: absolute;
 }
 .itemContainer:hover .itemThumbnail{
     transform: translateX(0px) translateY(-6px);
@@ -427,7 +447,7 @@ header{
     top: 3.5rem;
     left: 1rem;
     font-size: 1.1rem;
-    font-weight: 400;
+    font-weight: 300;
 }
 
 
@@ -436,7 +456,7 @@ header{
 
 .projectBanner{
     width: 100vw;
-    height: calc(100vw * (3/10));
+    height: calc(100vw * (500 / 1920));
     background-color: gray;
     object-fit: cover;
 }
@@ -481,14 +501,10 @@ header{
 }
 .compImage{
     background-color: black;
+    width: 100vw;
+    object-fit: cover;
     font-size: 0px;
     clear:both;
-}
-.compImage Img{
-    width: 100%;
-    object-fit: cover;
-    display: inline;
-    float: left;
 }
 .compSet1{
     width: 50%;
@@ -525,10 +541,59 @@ header{
 
 
 
+#about{
+    width: 80vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+.aboutDesc{
+    width: 60%;
+}
+#about p{
+    white-space:pre-line;
+}
+#about h3{
+    font-size: 1rem;
+}
+#about h2{
+    font-size:4rem;
+}
+.aboutImg{
+    width: 300px;
+    height: 300px;
+    background-color: var(--LightGray);
+}
+.aboutTitle{
+    padding: 6rem 0rem 3rem 0rem;
+    font-size: 3rem;
+    font-weight: 900;
+    position: relative;
+    left: 50vw;
+}
+#credit{
+    width: 80vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.creditImg{
+    width: 400px;
+    height: 300px;
+    height: 220px;
+    background-color: var(--LightGray);
+}
+
+
+
 
 .w10vw{width: 10vw;}
 .w20{width: 20%;}
 .w30{width: 30%;}
+.w50{width: 50%;}
 .w70{width: 70%;}
 .w80{width: 80%;}
 .w100{width: 100%;}
@@ -558,6 +623,7 @@ header{
 
 .lineSeperator{width: 80%; height: 1px;border-radius: 2px; background-color: var(--Black); margin-left: 10%;}
 
+.ocr{font-family: 'OCR A Std', sans-serif !important;}
 a{text-decoration: none; color: var(--Black);}
 p{color: var(--Black); line-height: 1.8rem; font-size: 1.1rem; font-weight: 500;}
 h1{font-size: 1.4rem; font-weight: 800;color: var(--Black);}
