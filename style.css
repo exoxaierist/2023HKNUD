@@ -414,15 +414,22 @@ header{
     display: flex;
     flex-wrap: wrap;
 }
-.studentContainer{
+.studentsM{
+    display: none;
+    width: 80vw;
+    gap: 0.8vw;
+
+    flex-wrap: wrap;
+}
+.studentContainerM{
     position: relative;
-    width: calc(((80vw + 20px) / 4) - 20px);
-    height: calc(((80vw + 20px) / 4) - 20px);
+    width: calc(((80vw + 0.8vw) / 4) - 0.8vw);
+    height: calc(((80vw + 0.8vw) / 4) - 0.8vw);
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: center;
 }
-.studentThumbnail{
+.studentThumbnailM{
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -431,23 +438,80 @@ header{
     transition-delay: 0.05s;
     transition-duration: 0.6s;
 }
-.studentContainer:hover .studentThumbnail{
+.studentContainerM:hover .studentThumbnailM{
     box-shadow: inset 18px 40px 40px -25px rgba(0, 0, 0, 0.3);
 }
-.studentListName{
-    position:absolute;
+.studentListNameM{
     top: 1rem;
     left: 1rem;
     font-size: 1.8rem;
     font-weight: 300;
     letter-spacing: 0.1rem;
 }
-.studentListRole{
-    position: absolute;
+.studentListRoleM{
     top: 3.5rem;
     left: 1rem;
     font-size: 1.1rem;
     font-weight: 300;
+}
+
+
+
+.studentsPc{
+    width: 80vw;
+    gap: 0.8vw;
+
+    display: flex;
+    flex-wrap: wrap;
+}
+.studentContainer{
+    width: calc(((80vw + 0.8vw) / 2) - 0.8vw);
+    height: 150px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    border-top: solid 1px var(--Highlight);
+}
+.studentInfoContainer{
+    width: calc(((80vw + 0.8vw) / 4) - 0.8vw);
+}
+.studentContainer h1{
+    padding-top: 0.2rem;
+    font-size: 2.5rem;
+    font-weight: 700;
+}
+.studentContainer h2{
+    font-weight: 500;
+}
+.studentProjectsContainer{
+    width: calc(((80vw + 0.8vw) / 4) - 0.8vw);
+    display: flex;
+    flex-direction: column;
+}
+.studentProject{
+    background-color: var(--Highlight);
+    padding: 0.5rem;
+    font-size: 1.3rem;
+    font-weight: 400;
+    color: var(--White);
+}
+.studentProjectThumbnail{
+    position: absolute;
+    left: 0px;
+    height: 100%;
+}
+
+
+
+
+
+
+.profileImg{
+    background-color: var(--LightGray);
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
 }
 
 
@@ -593,10 +657,14 @@ header{
 .w10vw{width: 10vw;}
 .w20{width: 20%;}
 .w30{width: 30%;}
+.w40{width: 40%;}
 .w50{width: 50%;}
+.w60{width: 60%;}
 .w70{width: 70%;}
 .w80{width: 80%;}
+.w90{width: 90%;}
 .w100{width: 100%;}
+.vw100{width: 100vw;}
 .h100{height: 100%;}
 .flex{display: flex;}
 .flexcol{display: flex; flex-direction: column;}

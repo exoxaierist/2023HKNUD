@@ -100,8 +100,8 @@ function RefreshCombinedFilter(){
     }
     FilterHideItems();
     setTimeout(FilterShowItems,filterFadeDuration-15);
-    setTimeout(()=>filterTransiting=false,filterFadeDuration*2);
-    console.log(combinedFilter)
+    setTimeout(()=>{filterTransiting=false; TryResize()},filterFadeDuration*2);
+    
 }
 
 function FilterHideItems(){
@@ -114,4 +114,10 @@ function FilterShowItems(){
         temp = temp.filter(activeFilters[i].join(", "))
     }
     temp.fadeIn(filterFadeDuration);
+}
+
+function TryResize(){
+    try{
+        scroller.resizeRequest = 1;
+    }catch(e){}
 }

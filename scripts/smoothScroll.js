@@ -28,6 +28,7 @@ function onLoad() {
   window.focus();
   updateScroller();  
   scroller.resizeRequest = 1;
+  setTimeout(()=>scroller.resizeRequest = 1,100);
 }
 
 function updateScroller(timeStamp) {
@@ -45,7 +46,7 @@ function updateScroller(timeStamp) {
   if (resized) {    
     var height = scroller.target.clientHeight;
     body.style.height = height + "px";
-    scroller.resizeRequest = 0;
+    scroller.resizeRequest--;
   }
   
   var scrollY = window.scrollY || html.scrollTop || body.scrollTop || 0;
