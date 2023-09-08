@@ -16,6 +16,6 @@ function UpdateItemDrag(){
         const element = dragItems[i];
         let top = element.getBoundingClientRect().top / window.innerHeight;
         top = deltaScroll>0?-(1-top):-top;
-        element.style.transform = "translateY(" + ((unscaledDeltaScroll*top*3)+0.15*((lefts[i]+5+rand)%10-5)*unscaledDeltaScroll)*0.001 + "vw)"
+        element.style.transform = "translateY(" + ((unscaledDeltaScroll*top*3)+0.15*((lefts[i]+5+rand)%10-5)*unscaledDeltaScroll)*0.001 + "rem)"
     }
 }
