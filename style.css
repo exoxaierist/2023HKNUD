@@ -713,8 +713,8 @@ header{
     }
 }
 @media screen and (max-width:850px){
-    .about p{
-        
+    #about p{
+
     }
 }
 @media screen and (max-width:650px){
