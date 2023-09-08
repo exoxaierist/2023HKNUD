@@ -647,14 +647,16 @@ header{
 
 
 
-
-#about{
+#aboutWrapper{
     width: 80vw;
+}
+#about{
+    width: 100%;
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: left;
     gap: 100px;
-    align-items: center;
+    align-items: top;
 }
 #about p{
     width: 50rem;
@@ -667,8 +669,8 @@ header{
     font-size:4rem;
 }
 .aboutImg{
-    width: 300px;
-    height: 300px;
+    width: 22rem;
+    height: 22rem;
     background-color: var(--LightGray);
 }
 .aboutTitle{
@@ -680,18 +682,46 @@ header{
     font-weight: 900;
 }
 #credit{
-    width: 80vw;
+    width: 100%;
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: left;
     align-items:start;
     gap: 100px;
 }
-
 .creditImg{
-    width: 30vw;
-    height: 15vw;
+    width: 30rem;
+    height: 22rem;
     background-color: var(--LightGray);
+}
+@media screen and (max-width:1350px){
+    .aboutImg{
+        display: none;
+    }
+    #credit{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: left;
+        align-items:start;
+        gap: 100px;
+    }
+    .creditImg{
+        width: 80vw;
+        height: 60vw;
+        background-color: var(--LightGray);
+    }
+}
+@media screen and (max-width:850px){
+    .about p{
+        
+    }
+}
+@media screen and (max-width:650px){
+    .creditCol{
+        flex-direction: column;
+        gap: 50px !important;
+    }
 }
 
 
