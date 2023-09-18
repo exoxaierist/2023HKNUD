@@ -4,19 +4,20 @@ import os
 import re
 
 # directories
-idcsv = "/X/idtest.csv"
-profilecsv = "/X/profilelist.csv"
-projectcsv = "/X/csvs"
-image_root = "/image/image_project"
-html_project_dir = "/projects"
-html_profile_dir = "/profiles"
+dir_csv_id = "/X/idtest.csv"
+dir_csv_profile = "/X/profilelist.csv"
+dir_csv_project = "/X/csvs"
+dir_target_project = "/projects"
+dir_target_profile = "/profiles"
+dir_img_src = "/image/image_project"
 
-archive_html_src = str("archive.html")
+html_archive = str("archive.html")
+html_students = str("students.html")
 
-idlist = []
+id_list = []
 id_dict = {}
-project_dict = {}
-student_dict = {}
+project_list = {}
+student_list = {}
 cwd = os.getcwd()
 
 # get html snippets
@@ -42,10 +43,10 @@ with open ("X/html_source/project_student.txt",'r',encoding='UTF-8') as file:
 class Project:
     title: str
     slogan: str
-    short_desc: str
     desc: str
     lecture: str
     category: str
+    sub_category: list
 
     students: list
     student_id: list
@@ -89,78 +90,132 @@ class Student:
         self.projects = projects
 
 # read idlist.csv
-with open(idcsv.removeprefix('/'),'r',encoding='UTF-8') as file:
-    idcsvr = csv.reader(file)
-    idcsvr = list(idcsvr)
+with open(dir_csv_id.removeprefix('/'),'r',encoding='UTF-8') as file:
+    rawdata_id = csv.reader(file)
+    rawdata_id = list(rawdata_id)
 
 # make idlist
-for i in range(5,len(idcsvr)):
-    idlist.append(idcsvr[i][1])
-id_dict = {idcsvr[i][1] : idcsvr[i][2] for i in range(5,len(idcsvr))}
+for i in range(5,len(rawdata_id)):
+    id_list.append(rawdata_id[i][1])
+id_dict = {rawdata_id[i][1] : rawdata_id[i][2] for i in range(5,len(rawdata_id))}
 
 # parse profile csv file
-with open(profilecsv.removeprefix('/'),'r',encoding='UTF-8') as file:
-    profilecsvr = csv.reader(file)
-    profilecsvr = list(profilecsvr)
+with open(dir_csv_profile.removeprefix('/'),'r',encoding='UTF-8') as file:
+    rawdata_profile = csv.reader(file)
+    rawdata_profile = list(rawdata_profile)
 
 # make student list
-for i in range(1,len(profilecsvr)):
-    student_dict[profilecsvr[i][2]] = Student(profilecsvr[i][1],profilecsvr[i][3],profilecsvr[i][4]
-    ,profilecsvr[i][5],profilecsvr[i][6].split(','),profilecsvr[i][7],profilecsvr[i][8],profilecsvr[i][9],profilecsvr[i][10],profilecsvr[i][11].replace(' ','').split(','))
-    for j in range(0,len(student_dict[profilecsvr[i][2]].interests)):
-        student_dict[profilecsvr[i][2]].interests[j] = student_dict[profilecsvr[i][2]].interests[j].strip()
+for i in range(1,len(rawdata_profile)):
+    student_list[rawdata_profile[i][2]] = Student(
+        self=rawdata_profile[i][1],
+        name=rawdata_profile[i][3],
+        desc=rawdata_profile[i][4],
+        email=rawdata_profile[i][5],
+        career=rawdata_profile[i][6].split(','),
+        interests=rawdata_profile[i][7],
+        insta=rawdata_profile[i][8],
+        behance=rawdata_profile[i][9],
+        other1=rawdata_profile[i][10],
+        other2=rawdata_profile[i][11].replace(' ','').split(','))
+    for j in range(0,len(student_list[rawdata_profile[i][2]].interests)):
+        student_list[rawdata_profile[i][2]].interests[j] = student_list[rawdata_profile[i][2]].interests[j].strip()
 
 
 
-# parse project csv files
-for filename in os.listdir(cwd + projectcsv +"/"):
-    if filename.removesuffix(".csv") in idlist:
-        _instance = Project
+# make projects list
+for filename in os.listdir(cwd + dir_csv_project +"/"):
+    if filename.removesuffix(".csv") in id_list:
+        _instance = Project()
         _id = filename.removesuffix(".csv")
         # read csv file into list
-        with open( projectcsv.removeprefix('/') + '/' + filename,'r',encoding="UTF-8") as file:
-            csvr = csv.reader(file)
-            csvr = list(csvr)
-        _instance.title = csvr[3][1]
+        with open( dir_csv_project.removeprefix('/') + '/' + filename,'r',encoding="UTF-8") as file:
+            rawdata_project = csv.reader(file)
+            rawdata_project = list(rawdata_project)
+        _instance.title = rawdata_project[3][1]
         _instance.category = id_dict[_id]
-        _instance.slogan = csvr[4][1]
-        _instance.lecture = csvr[1][1]
-        _instance.desc = csvr[5][1]
+        _instance.slogan = rawdata_project[4][1]
+        _instance.lecture = rawdata_project[1][1]
+        _instance.desc = rawdata_project[5][1]
         # make students list
         students = []
         student_role = []
         student_id = []
-        for i in range(4,len(csvr[0])):
-            students.append(csvr[0][i])
-            student_id.append(csvr[1][i])
-            student_role.append(csvr[2][i])
+        for i in range(4,len(rawdata_project[0])):
+            students.append(rawdata_project[0][i])
+            student_id.append(rawdata_project[1][i])
+            student_role.append(rawdata_project[2][i])
+            if rawdata_project[1][i] in student_list.keys:
+                student_list[rawdata_project[1][i]].projects.appen(rawdata_project[1][i]);
         _instance.students = students
         _instance.student_role = student_role
         _instance.student_id = student_id
         # make comp list
         comp = []
-        for i in range(9,len(csvr)):
-            comp.append((csvr[i][0], csvr[i][1]))
+        for i in range(9,len(rawdata_project)):
+            comp.append((rawdata_project[i][0], rawdata_project[i][1]))
         _instance.comp = comp
         # make project dictionary
-        project_dict[filename.removesuffix(".csv")] = _instance
+        project_list[filename.removesuffix(".csv")] = _instance
 
+with open("X/html_source/archive_project.txt",'r',encoding='UTF-8') as file:
+    html_archive_project = file.read()
+
+def make_project_item(id):
+    _info = project_list[id]
+    filterList = "filter" + id[:2].upper()
+    return html_archive_project.\
+        replace("$DESC",_info.slogan).\
+        replace("$STUDENTS",' '.join(_info.students)).\
+        replace("$TITLE",_info.title).\
+        replace("$CATEGORY",_info.category).\
+        replace("$ID",id).\
+        replace("$FILTER",filterList)
+
+
+
+
+
+
+
+# edit archive html file
+with open(html_archive,'r',encoding='UTF-8') as file:
+    html = file.read()
+
+_project_items:str
+for key in project_list.keys:
+    _project_items += make_project_item(key)
+    
+html = re.sub(r"<!--PROJECT LIST START-->(.*?)<!--PROJECT LIST END-->",f"<!--PROJECT LIST START-->{_project_items}<!--PROJECT LIST END-->",html,flags=re.DOTALL)
+with open(html_archive,'w',encoding='UTF-8') as file:
+    file.write(html)
+
+
+
+# edit students html file
+with open(html_archive,'r',encoding='UTF-8') as file:
+    html = file.read()
+
+_student_items:str
+
+html = re.sub(r"<!--STUDENT LIST START-->(.*?)<!--STUDENT LIST END-->",f"<!--STUDENT LIST START-->{_student_items}<!--STUDENT LIST END-->",html,flags=re.DOTALL)
+with open(html_archive,'w',encoding='UTF-8') as file:
+    file.write(html)
 
 
 # create project html files
-for key, info in project_dict.items():
-    print("writing : ", key)
-    html = open(html_project_dir.removeprefix('/') + '/' + key + ".html",'w',encoding="UTF-8")
+for key, info in project_list.items():
+    print("writing project : ", key)
+    html = open(dir_target_project.removeprefix('/') + '/' + key + ".html",'w',encoding="UTF-8")
 
     students_html:str = ""
     for i,name in enumerate(info.students):
         students_html += html_project_student.replace("$STUDENT",name)
-    html.write(html_project_top.\
-        replace("$CLASS",info.lecture).\
-        replace("$TITLE",info.title).\
-        replace("$MOTO",info.slogan).\
-        replace("$DESC",info.desc).\
-        replace("$STUDENTS_HTML", students_html).\
+    html.write(html_project_top.
+        replace("$CLASS",info.lecture).
+        replace("$TITLE",info.title).
+        replace("$MOTO",info.slogan).
+        replace("$DESC",info.desc).
+        replace("$STUDENTS_HTML", students_html).
         replace("$ID",key))
 
     # composition
@@ -177,46 +232,40 @@ for key, info in project_dict.items():
         elif section[0] == "image":
             # image
             html.write(html_project_comp_image.replace("$CONTENT", section[1]).replace("$ID",key))
-        ##elif section[0] == "youtube":
+        elif section[0] == "youtube":
             # youtube
-            #html.write(html_project_comp_youtube.replace("$CONTENT",section[1]))
+            html.write(html_project_comp_youtube.replace("$CONTENT",section[1]))
         elif section[0] == "vimeo":
             # vimeo
             html.write(html_project_comp_vimeo.replace("$CONTENT",section[1]))
         
     # add students
-    #for index, studentid in enumerate(info.student_id):
-    #    snippet = html_project_student
-    #    snippet = snippet.replace("$NAME",info.students[index]).replace("$ROLE",info.student_role[index] if len(info.students)>1 else "").replace("$LINK",html_profile_dir + '/' + studentid + ".html")
+    for index, studentid in enumerate(info.student_id):
+        snippet = html_project_student
+        snippet = snippet.replace("$NAME",info.students[index]).replace("$ROLE",info.student_role[index] if len(info.students)>1 else "").replace("$LINK",dir_target_profile + '/' + studentid + ".html")
+
+    # get releated projects
+    related_projects_id = []
+    for _student_id in info.student_id:
+        for _project_id in student_list[_student_id].projects:
+            if _project_id not in related_projects_id:
+                related_projects_id.append(_project_id)
+    
+    related_projects:str
+    for _id in related_projects_id:
+        related_projects += make_project_item(_id)
 
     # add footer and other stuffs
     html.write(html_project_bottom)
 
 
 
-# edit archive html file
-with open(archive_html_src,'r',encoding='UTF-8') as file:
-    html = file.read()
-with open("X/html_source/archive_project.txt",'r',encoding='UTF-8') as file:
-    html_archive_project = file.read()
+# create profile html files
 
-project_archive = ''
-for key,info in project_dict.items():
+for key,info in student_list:
+    print("writing profile : ", key)
+    html = open(dir_target_profile.removeprefix('/') + '/' + key + ".html",'w',encoding="UTF-8")
 
-    filterList = "filter" + key[:2].upper()
-
-    project_archive += html_archive_project.\
-        replace("$DESC",info.slogan).\
-        replace("$STUDENTS",' '.join(info.students)).\
-        replace("$TITLE",info.title).\
-        replace("$CATEGORY",info.category).\
-        replace("$ID",key).\
-        replace("$FILTER",filterList)
     
-html = re.sub(r"<!--PROJECT LIST START-->(.*?)<!--PROJECT LIST END-->",f"<!--PROJECT LIST START-->{project_archive}<!--PROJECT LIST END-->",html,flags=re.DOTALL)
-with open(archive_html_src,'w',encoding='UTF-8') as file:
-    file.write(html)
-
-
 
 print("-----DONE!-----")
