@@ -40,6 +40,13 @@ with open ("X/html_source/project_bottom.txt",'r',encoding='UTF-8') as file:
 with open ("X/html_source/project_student.txt",'r',encoding='UTF-8') as file:
     html_project_student = file.read()
 
+with open ("X/html_source/profile.txt",'r',encoding='UTF-8') as file:
+    html_profile = file.read()
+with open ("X/html_source/profile_link_insta.txt",'r',encoding='UTF-8') as file:
+    html_profile_link_insta = file.read()
+with open ("X/html_source/profile_link_behance.txt",'r',encoding='UTF-8') as file:
+    html_profile_link_behance = file.read()
+
 class Project:
     title: str
     slogan: str
@@ -202,12 +209,15 @@ with open(html_archive,'w',encoding='UTF-8') as file:
     file.write(html)
 
 
+
+
+
 # create project html files
 for key, info in project_list.items():
     print("writing project : ", key)
     html = open(dir_target_project.removeprefix('/') + '/' + key + ".html",'w',encoding="UTF-8")
 
-    students_html:str = ""
+    students_html:str
     for i,name in enumerate(info.students):
         students_html += html_project_student.replace("$STUDENT",name)
     html.write(html_project_top.
@@ -265,7 +275,26 @@ for key, info in project_list.items():
 for key,info in student_list:
     print("writing profile : ", key)
     html = open(dir_target_profile.removeprefix('/') + '/' + key + ".html",'w',encoding="UTF-8")
+    
+    _write_link:str
+    if info.insta is not "":
+        _write_link += html_profile_link_insta.replace("$INSTA",info.insta)
+    if info.behance is not "":
+        _write_link += html_profile_link_behance.replace("$BEHANCE",info.behance)
+    
+    _write_projects:str
+    for _id in info.projects:
+        _write_projects += make_project_item(_id)
 
+    _write = html_profile.\
+        replace("$NAME",info.name).\
+        replace("$CAREER",info.career).\
+        replace("DESC",info.desc).\
+        replace("<!--LINK-->",_write_link).\
+        replace("<!--PROJECT LIST-->",_write_projects)
+
+
+    html.write(_write)
     
 
 print("-----DONE!-----")

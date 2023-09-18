@@ -520,6 +520,11 @@ header{
     height: calc(((80vw + 0.8vw) / 4) - 0.8vw);
     object-fit: cover;
 }
+.profileInfoContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
 .profileInfoContainer h1{
     display: inline;
     font-size: 4rem;
@@ -551,7 +556,7 @@ header{
 .profileInfoLink p{
     padding-left: 1rem;
     position: relative;
-    top: -0.2rem;
+    top: -0.15rem;
     display: inline;
 }
 .profileInfoContainer a:hover{

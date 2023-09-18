@@ -1,0 +1,5 @@
+                            <!--INSTAGRAM-->
+                            <a href="https://www.instagram.com/$INSTA/" class="profileInfoLink">
+                                <img src="" alt="">
+                                <p>@$INSTA</p>
+                            </a>
