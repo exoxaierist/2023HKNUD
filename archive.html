@@ -4,10 +4,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HKNU 2023 Design Archive</title>
+    <title>HKNUD 2023</title>
     <link rel="stylesheet" href="style.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="scripts/archiveFilter.js" defer></script>
+    <script src="scripts/navOverlay.js" defer></script>
     <script src="scripts/smoothScroll.js" defer></script>
     <script src="scripts/itemDrag.js" defer></script>
 </head>
@@ -15,76 +16,112 @@
     <section class="viewport">
         
         <div id="scroll-container">
-
-            <!--HEADER-->   
-            <header>
-                <div class="w100 flexcol jCenter aTop">
-                    <a href=""><div class="navMenu">home</div></a>
-                    <div class="navMenuCurrent">projects</div>
-                    <a href="students.html"><div class="navMenu">students</div></a>
-                    <a href=""><div class="navMenu">guestbook</div></a>
-                </div>
-            </header>
-        
-            <div class="vGap50"></div>
-            <!--FILTER-->
-            <div class="flexcol jCenter aCenter gap10">
-                <div id="filterContainer">
-                    <button class="allBtn" filter="ALL" filterGroup="0">전체</button>
-                    <button class="filterBtn" filter="filterDP" filterGroup="0">디지털 융합 프로젝트</button>
-                    <button class="filterBtn" filter="filterBM" filterGroup="0">브랜드 매니지먼트</button>
-                    <button class="filterBtn" filter="filterVP" filterGroup="0">시각 프로젝트</button>
-                    <button class="filterBtn" filter="filterIB" filterGroup="0">인터랙션 비즈니스</button>
-                </div>
-                <div id="filterContainer">
-                    <button class="allBtn" filter="ALL" filterGroup="1">전체</button>
-                    <button class="filterBtn" filter="filterUx" filterGroup="1">UX/UI</button>
-                    <button class="filterBtn" filter="filterBr" filterGroup="1">Branding</button>
-                    <button class="filterBtn" filter="filter3d" filterGroup="1">3D</button>
-                    <button class="filterBtn" filter="filterIn" filterGroup="1">Interaction</button>
-                </div>
-            </div>
-            <div class="vGap50"></div>
-            <div class="flex jCenter aTop">
-                <div id="archiveContainer">
-                    
-                    <!--PROJECT LIST START-->
-                    <div class="itemContainer filterDP filter3d" OnClick="location.href ='projects/dp_2019286056.html'">
-                        <div class="itemThumbnail">
-                            <div class="w100 h100 flex jLeft aBottom">
-                                <div class="itemHoverInfo">
-                                    <p>(예시)슬로건이나 한줄설명</p>
-                                    <h3>조한음</h3>
-                                </div>
-                            </div>
+            <div id="pageID" class="overlayToggle">Projects</div>
+            <div class="flex jCenter aCenter">
+                <div class="w80 flexcol aStart">
+                    <!--FILTER-->
+                    <div id="filterContainer">
+                        <div class="filterGroup">
+                            <button class="allBtn textOverflow" filter="ALL" filterGroup="0">전체</button>
+                            <button class="filterBtn textOverflow" filter="filterDP" filterGroup="0">디지털 융합 프로젝트</button>
+                            <button class="filterBtn textOverflow" filter="filterBM" filterGroup="0">브랜드 매니지먼트</button>
+                            <button class="filterBtn textOverflow" filter="filterVP" filterGroup="0">시각 프로젝트</button>
+                            <button class="filterBtn textOverflow" filter="filterIB" filterGroup="0">인터랙션 비즈니스</button>
                         </div>
-                        <div class="itemInfoContainer">
-                            <h2>(예시)멋진 프로젝트</h2>
-                            <p class="cGray">Animation</p>
+                        <div class="filterGroup">
+                            <button class="allBtn textOverflow" filter="ALL" filterGroup="1">전체</button>
+                            <button class="filterBtn textOverflow" filter="filter3d" filterGroup="1">3D</button>
+                            <button class="filterBtn textOverflow" filter="filterBrand" filterGroup="1">Branding</button>
+                            <button class="filterBtn textOverflow" filter="filterGraphic" filterGroup="1">Graphic</button>
+                            <button class="filterBtn textOverflow" filter="filterInteractive" filterGroup="1">Interactive</button>
+                            <button class="filterBtn textOverflow" filter="filterMotion" filterGroup="1">Motion</button>
+                            <button class="filterBtn textOverflow" filter="filterUx" filterGroup="1">UX/UI</button>
                         </div>
                     </div>
-<!--PROJECT LIST END-->
+                    <div id="classDesContainer">
+                        <div class="classDesc">
+                            <h1 style="font-weight: 900; display: inline;">디지털 융합 프로젝트</h1>
+                            <h2 style="display: inline; padding-left: 1rem;">나상호/홍승표 교수</h2>
+                            <br>
+                            <br>
+                            <p>
+                                급변하고 넘쳐나는 비즈니스와 서비스 속에서 차별화된 가치를 발견하고 디자인합니다. 
+                                평범해 보이는 삶 속에서 반짝이는 단서를 찾아 디자인으로 풀어냈고, 
+                                과정이 곧 결과이듯 그 안에서 스스로 성장하고 경험하였습니다. 
+                                크리에이티브의 가치가 다름에 있음을, 그리고 성장의 기회가 용기와 경험에 있음을 체험했길 바랍니다.
+                            </p>
+                        </div>
+                        <div class="classDesc">
+                            <h1 style="font-weight: 900; display: inline;">브랜드 매니지먼트</h1>
+                            <h2 style="display: inline; padding-left: 1rem;">최한솔 교수</h2>
+                            <br>
+                            <br>
+                            <p>
+                                급변하고 넘쳐나는 비즈니스와 서비스 속에서 차별화된 가치를 발견하고 디자인합니다.
+                                과정이 곧 결과이듯 그 안에서 스스로 성장하고 경험하였습니다. 
+                                크리에이티브의 가치가 다름에 있음을, 그리고 성장의 기회가 용기와 경험에 있음을 체험했길 바랍니다.
+                            </p>
+                        </div>
+                        <div class="classDesc">
+                            <h1 style="font-weight: 900; display: inline;">시각 프로젝트</h1>
+                            <h2 style="display: inline; padding-left: 1rem;">이보람 교수</h2>
+                            <br>
+                            <br>
+                            <p>
+                                급변하고 넘쳐나는 비즈니스와 서비스 속에서 차별화된 가치를 발견하고 디자인합니다. 
+                                평범해 보이는 삶 속에서 반짝이는 단서를 찾아 디자인으로 풀어냈고, 
+                                과정이 곧 결과이듯 그 안에서 스스로 성장하고 경험하였습니다.
+                            </p>
+                        </div>
+                        <div class="classDesc">
+                            <h1 style="font-weight: 900; display: inline;">인터랙션 비즈니스</h1>
+                            <h2 style="display: inline; padding-left: 1rem;">홍순기 교수</h2>
+                            <br>
+                            <br>
+                            <p>
+                                급변하고 넘쳐나는 비즈니스와 서비스 속에서 차별화된 가치를 발견하고 디자인합니다. 
+                                평범해 보이는 삶 속에서 반짝이는 단서를 찾아 디자인으로 풀어냈고,
+                                크리에이티브의 가치가 다름에 있음을, 그리고 성장의 기회가 용기와 경험에 있음을 체험했길 바랍니다.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="vGap50"></div>
+
+
+            
+            <div class="flex jCenter aTop">
+                <div id="archiveContainer">
+
+                    <!--PROJECT LIST START-->
+                    
+                    <!--PROJECT LIST END-->
                     
                 </div>
+                
             </div>
         
         
         
             <div class="vGap100"></div>
-        
-            <div style="height: 1000px;"></div>
+            <div class="vGap100"></div>
+            <div class="vGap100"></div>
+            <div class="vGap100"></div>
+
             <!--FOOTER-->
-            <footer>
-                <div class="w80 flex aCenter jBetween">
+            <div class="flex jCenter aCenter">
+                <footer>
                     <div class="flex aCenter gap20">
                         <img src="" alt="" class="footerLogo">
                         <h4>
                             2023 한경국립대학교 디자인학과
                             <br>
-                            제 26회 졸업전시회 : $졸전이름
+                            제 26회 졸업전시회 : A Star
                         </h4>
                     </div>
-                    <div class="flex gap20">
+                    <div class="footerLinks">
                         <p><a href="https://www.instagram.com/hknudesign.show/" target="_blank">Instagram</a></p>
                         <p><a href="https://www.facebook.com/hkdesign.show" target="_blank">Facebook</a></p>
                         <p><a href="https://www.youtube.com/c/hknudesign/featured" target="_blank">Youtube</a></p>
@@ -99,9 +136,112 @@
                             ⓒ 2023 HKNUDESIGN. All rights reserved
                         </h6>
                     </div>
-                </div>
-            </footer>
+                </footer>
+            </div>
+            <!--END OF FOOTER-->
+
         </div>
     </section>
+
+
+
+
+    <!--NAVIGATION-->
+    <div id="navOverlay">
+        <div class="vgap50"></div>
+        <div class="w80 flex jLeft"><img src="" alt="" class="bgGray" style="width: 300px;height: 50px;opacity: 50%;"></div>
+        
+        <div id="navOverlayBtnGroup">
+            <div class="navOverlayBtn" OnClick="location.href ='index.html'">
+                <div class="navOverlayBtnBackground"></div>
+                <div class="navOverlayBtnText">Home
+                    <div class="arrowTarget">
+                        <div class="pGroup">
+                            <div class="circleGlobal delay1"></div>
+                            <div class="arrowGlobal delay4" style="width: 60px; rotate:-90deg"></div>
+                            <div class="arrowGlobal delay3" style="width: 60px; rotate:0deg"></div>
+                            <div class="circleGlobal delay2" style="top: -60px;"></div>
+                            <div class="circleGlobal delay2" style="left: 60px;"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="arrowGroup">
+                    <div class="circleGlobal arrowCircle"style="left:90vw;top:50px;"></div>
+                    <div class="arrowLine arrowGlobal"></div>
+                    
+                </div>
+            </div>
+            <div class="navOverlayBtn navOverlayBtnCurrent overlayToggle">
+                <div class="navOverlayBtnBackground"></div>
+                <div class="navOverlayBtnText">Projects
+                    <div class="arrowTarget">
+                        <div class="pGroup">
+                            <div class="circleGlobal delay1"></div>
+                            <div class="arrowGlobal delay3" style="width: 60px; rotate:-90deg"></div>
+                            <div class="arrowGlobal delay4" style="width: 60px; rotate:0deg"></div>
+                            <div class="circleGlobal delay2" style="top: -60px;"></div>
+                            <div class="circleGlobal delay2" style="left: 60px;"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="arrowGroup">
+                    <div class="circleGlobal arrowCircle"style="left:90vw;top:50px;"></div>
+                    <div class="arrowLine arrowGlobal"></div>
+                </div>
+            </div>
+            <div class="navOverlayBtn" OnClick="location.href ='studentsTest.html'">
+                <div class="navOverlayBtnBackground"></div>
+                <div class="navOverlayBtnText">Students
+                    <div class="arrowTarget">
+                        <div class="pGroup">
+                            <div class="circleGlobal delay1"></div>
+                            <div class="arrowGlobal delay3" style="width: 60px; rotate:-90deg"></div>
+                            <div class="arrowGlobal delay3" style="width: 60px; rotate:0deg"></div>
+                            <div class="circleGlobal delay2" style="top: -60px;"></div>
+                            <div class="circleGlobal delay2" style="left: 60px;"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="arrowGroup">
+                    <div class="circleGlobal arrowCircle"style="left:90vw;top:50px;"></div>
+                    <div class="arrowLine arrowGlobal"></div>
+                </div>
+            </div>
+            <div class="navOverlayBtn" OnClick="location.href ='about.html'">
+                <div class="navOverlayBtnBackground"></div>
+                <div class="navOverlayBtnText">About
+                    <div class="arrowTarget">
+                        <div class="pGroup" style="margin-left: -6px;">
+                            <div class="circleGlobal delay1"></div>
+                            <div class="arrowGlobal delay4" style="width: 60px; rotate:-90deg"></div>
+                            <div class="arrowGlobal delay3" style="width: 60px; rotate:0deg"></div>
+                            <div class="circleGlobal delay2" style="top: -60px;"></div>
+                            <div class="circleGlobal delay2" style="left: 60px;"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="arrowGroup">
+                    <div class="circleGlobal arrowCircle"style="left:90vw;top:50px;"></div>
+                    <div class="arrowLine arrowGlobal"></div>
+                    
+                </div>
+            </div>
+        </div>
+        <div class="navOverlayCancel overlayToggle"></div>
+
+    </div>
+    <div class="navXContainer">
+        <div class="navXBtn overlayToggle">
+            <div class="arrowGlobal" style="width: 50px; left: 26px; rotate:90deg; scale: 1 1 !important; position: relative !important;"></div>
+            <div class="arrowGlobal" style="width: 50px; top: 24px; scale: 1 1 !important; position: relative !important;"></div>
+            <div class="circleGlobal"style="left:5px;top:26px; scale:1 !important"></div>
+            <div class="circleGlobal"style="left:45px;top:26px; scale:1 !important"></div>
+            <div class="circleGlobal"style="left:25px;top:5px; scale:1 !important"></div>
+            <div class="circleGlobal"style="left:25px;top:45px; scale:1 !important"></div>
+        </div>
+    </div>
+    <!--END OF NAVIGATION-->
+
+
 </body>
 </html>

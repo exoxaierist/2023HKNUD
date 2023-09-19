@@ -4,15 +4,15 @@ import os
 import re
 
 # directories
-dir_csv_id = "/X/idtest.csv"
-dir_csv_profile = "/X/profilelist.csv"
+dir_csv_id = "/X/0919_idtest.csv"
+dir_csv_profile = "/X/0919_profiletest.csv"
 dir_csv_project = "/X/csvs"
 dir_target_project = "/projects"
 dir_target_profile = "/profiles"
 dir_img_src = "/image/image_project"
 
-html_archive = str("archive.html")
-html_students = str("students.html")
+target_archive = str("archive.html")
+target_students = str("students.html")
 
 id_list = []
 id_dict = {}
@@ -21,6 +21,14 @@ student_list = {}
 cwd = os.getcwd()
 
 # get html snippets
+with open("X/html_source/archive_project.txt",'r',encoding='UTF-8') as file:
+    html_archive_project = file.read()
+
+with open("X/html_source/students_item.txt",'r',encoding='UTF-8') as file:
+    html_students_item = file.read()
+
+with open ("X/html_source/project.txt",'r',encoding='UTF-8') as file:
+    html_project = file.read()
 with open ("X/html_source/project_comp_header.txt",'r',encoding='UTF-8') as file:
     html_project_comp_header = file.read()
 with open ("X/html_source/project_comp_sub_header.txt",'r',encoding='UTF-8') as file:
@@ -159,13 +167,12 @@ for filename in os.listdir(cwd + dir_csv_project +"/"):
         # make comp list
         comp = []
         for i in range(9,len(rawdata_project)):
-            comp.append((rawdata_project[i][0], rawdata_project[i][1]))
+            comp.append([rawdata_project[i][0], rawdata_project[i][1],rawdata_project[i][2],rawdata_project[i][3]])
         _instance.comp = comp
         # make project dictionary
         project_list[filename.removesuffix(".csv")] = _instance
 
-with open("X/html_source/archive_project.txt",'r',encoding='UTF-8') as file:
-    html_archive_project = file.read()
+
 
 def make_project_item(id):
     _info = project_list[id]
@@ -185,7 +192,7 @@ def make_project_item(id):
 
 
 # edit archive html file
-with open(html_archive,'r',encoding='UTF-8') as file:
+with open(target_archive,'r',encoding='UTF-8') as file:
     html = file.read()
 
 _project_items:str
@@ -193,19 +200,23 @@ for key in project_list.keys:
     _project_items += make_project_item(key)
     
 html = re.sub(r"<!--PROJECT LIST START-->(.*?)<!--PROJECT LIST END-->",f"<!--PROJECT LIST START-->{_project_items}<!--PROJECT LIST END-->",html,flags=re.DOTALL)
-with open(html_archive,'w',encoding='UTF-8') as file:
+with open(target_archive,'w',encoding='UTF-8') as file:
     file.write(html)
 
 
 
 # edit students html file
-with open(html_archive,'r',encoding='UTF-8') as file:
+with open(target_archive,'r',encoding='UTF-8') as file:
     html = file.read()
 
 _student_items:str
+for key,info in student_list:
+    _student_items += html_students_item.\
+        replace("$NAME",info.name).\
+        replace("$CAREER",info.career)
 
 html = re.sub(r"<!--STUDENT LIST START-->(.*?)<!--STUDENT LIST END-->",f"<!--STUDENT LIST START-->{_student_items}<!--STUDENT LIST END-->",html,flags=re.DOTALL)
-with open(html_archive,'w',encoding='UTF-8') as file:
+with open(target_archive,'w',encoding='UTF-8') as file:
     file.write(html)
 
 
@@ -216,17 +227,16 @@ with open(html_archive,'w',encoding='UTF-8') as file:
 for key, info in project_list.items():
     print("writing project : ", key)
     html = open(dir_target_project.removeprefix('/') + '/' + key + ".html",'w',encoding="UTF-8")
-
-    students_html:str
+    _students:str
     for i,name in enumerate(info.students):
-        students_html += html_project_student.replace("$STUDENT",name)
-    html.write(html_project_top.
-        replace("$CLASS",info.lecture).
-        replace("$TITLE",info.title).
-        replace("$MOTO",info.slogan).
-        replace("$DESC",info.desc).
-        replace("$STUDENTS_HTML", students_html).
-        replace("$ID",key))
+        _students += html_project_student.replace("$STUDENT",name)
+    _write = html_project.\
+        replace("$CLASS",info.lecture).\
+        replace("$TITLE",info.title).\
+        replace("$MOTO",info.slogan).\
+        replace("$DESC",info.desc).\
+        replace("$STUDENTS_HTML", _students).\
+        replace("$ID",key)
 
     # composition
     for section in info.comp:
@@ -264,9 +274,6 @@ for key, info in project_list.items():
     related_projects:str
     for _id in related_projects_id:
         related_projects += make_project_item(_id)
-
-    # add footer and other stuffs
-    html.write(html_project_bottom)
 
 
 

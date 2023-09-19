@@ -1,2 +1,3 @@
             <!--Image-->
-            <div  class="compImage"><img src="../image/image_project/$ID/$CONTENT"></div>
+            <img src="../image/image_project/$ID/$CONTENT1" alt="" class="compImage">
+            
