@@ -98,6 +98,7 @@ function RefreshCombinedFilter(){
     for (let i = 0; i < filterGroupCount; i++) {
         combinedFilter += activeFilters[i].join(", ");
     }
+    console.log(combinedFilter)
     FilterHideItems();
     setTimeout(FilterShowItems,filterFadeDuration-15);
     setTimeout(()=>{filterTransiting=false; TryResize()},filterFadeDuration*2);

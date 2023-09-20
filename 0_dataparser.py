@@ -41,6 +41,8 @@ with open ("X/html_source/project_comp_vimeo.txt",'r',encoding='UTF-8') as file:
     html_project_comp_vimeo = file.read()
 with open ("X/html_source/project_comp_image.txt",'r',encoding='UTF-8') as file:
     html_project_comp_image = file.read()
+with open ("X/html_source/project_comp_link.txt",'r',encoding='UTF-8') as file:
+    html_project_comp_link = file.read()
 with open ("X/html_source/project_student.txt",'r',encoding='UTF-8') as file:
     html_project_student = file.read()
 
@@ -57,7 +59,7 @@ class Project:
     desc: str
     lecture: str
     category: str
-    sub_category: list
+    sub_category: str
 
     students: list
     student_id: list
@@ -132,6 +134,7 @@ for filename in os.listdir(cwd + dir_csv_project +"/"):
             rawdata_project = list(rawdata_project)
             
         _instance.category = rawdata_project[3][1]
+        _instance.sub_category = rawdata_project[3][3]
         _instance.title = rawdata_project[4][1]
         _instance.slogan = rawdata_project[5][1]
         _instance.lecture = rawdata_project[1][1]
@@ -158,6 +161,7 @@ for filename in os.listdir(cwd + dir_csv_project +"/"):
 def make_project_item(id,sub):
     _info = project_list[id]
     filterList = "filter" + id[:2].upper()
+    filterList += " filter" + project_list[id].sub_category
     return html_archive_project.\
         replace("$SLOGAN",_info.slogan).\
         replace("$STUDENTS",' '.join(_info.students)).\
@@ -225,46 +229,56 @@ for key, info in project_list.items():
         replace("$STUDENTS", _students).\
         replace("$ID",key)
 
+
+
     # composition
     _comp =""
-    for section in info.comp:
-        if section[0] == "text_1":
+    for _temp in info.comp:
+        
+        if _temp[0] == "text_1":
             # header
-            comp += html_project_comp_text1.\
-                       replace("$CONTENT1",section[1]).\
-                        replace("$CONTENT2",section[2]).\
-                        replace("$CONTENT3",section[3])
-        elif section[0] == "text_2":
+            _comp += html_project_comp_text1.\
+                       replace("$CONTENT1",_temp[1]).\
+                        replace("$CONTENT2",_temp[2]).\
+                        replace("$CONTENT3",_temp[3])
+        elif _temp[0] == "text_2":
             # sub_header
-            comp += html_project_comp_text2.\
-                       replace("$CONTENT1",section[1]).\
-                        replace("$CONTENT2",section[2])
-        elif section[0] == "text_3":
+            _comp += html_project_comp_text2.\
+                       replace("$CONTENT1",_temp[1]).\
+                        replace("$CONTENT2",_temp[2])
+        elif _temp[0] == "text_3":
             # description
-            comp += html_project_comp_text3.\
-                       replace("$CONTENT1",section[1]).\
-                        replace("$CONTENT2",section[2])
-        elif section[0] == "image":
+            _comp += html_project_comp_text3.\
+                       replace("$CONTENT1",_temp[1]).\
+                        replace("$CONTENT2",_temp[2])
+        elif _temp[0] == "image":
             # image
-            comp += html_project_comp_image.\
-                       replace("$CONTENT1", section[1]).\
+            _comp += html_project_comp_image.\
+                       replace("$CONTENT1", _temp[1]).\
                         replace("$ID",key)
-        elif section[0] == "youtube":
+        elif _temp[0] == "youtube":
             # youtube
-            comp += html_project_comp_youtube.\
-                       replace("$CONTENT1",section[1])
-        elif section[0] == "vimeo":
+            _comp += html_project_comp_youtube.\
+                       replace("$CONTENT1",_temp[1])
+        elif _temp[0] == "vimeo":
             # vimeo
-            comp += html_project_comp_vimeo.\
-                       replace("$CONTENT1",section[1])
-            
+            _comp += html_project_comp_vimeo.\
+                       replace("$CONTENT1",_temp[1])
+        elif _temp[0] == "link":
+            # link
+            _comp += html_project_comp_link.\
+                       replace("$CONTENT1",_temp[1]).\
+                       replace("$CONTENT2",_temp[2])
+    
+
+
     _write = _write.replace("<!--COMP-->",_comp)
     
     # get releated projects
     related_projects_id = []
     for _student_id in info.student_id:
         for _project_id in student_list[_student_id].projects:
-            if _project_id not in related_projects_id:
+            if _project_id not in related_projects_id and _project_id != key:
                 related_projects_id.append(_project_id)
     related_projects=""
     for _id in related_projects_id:
@@ -272,7 +286,7 @@ for key, info in project_list.items():
     _write = _write.replace("<!--PROJECT LIST-->",related_projects)
 
     html.write(_write)
-
+    
 
 
 

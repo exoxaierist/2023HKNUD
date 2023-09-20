@@ -1,5 +1,6 @@
+
                             <!--INSTAGRAM-->
-                            <a href="https://www.instagram.com/$INSTA/" class="profileInfoLink">
-                                <img src="" alt="">
-                                <p>@$INSTA</p>
+                            <a href="https://www.instagram.com/$INSTA/" class="profileInfoLink" target="_blank">
+                                <img src="../image/icons/icon_insta.svg" alt="">
+                                <p>$INSTA</p>
                             </a>

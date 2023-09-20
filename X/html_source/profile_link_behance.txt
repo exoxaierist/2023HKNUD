@@ -1,5 +1,6 @@
+
                             <!--BEHANCE-->
-                            <a href="$BEHANCE" class="profileInfoLink">
-                                <img src="" alt="">
+                            <a href="$BEHANCE" class="profileInfoLink" target = "_blank">
+                                <img src="../image/icons/icon_behance.svg" alt="">
                                 <p>Behance</p>
                             </a>

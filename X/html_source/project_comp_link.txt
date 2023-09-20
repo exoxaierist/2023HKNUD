@@ -1,0 +1,7 @@
+
+            <a href="$CONTENT2" target="_blank">
+                <div class="compLink">
+                    <img src="../image/icons/icon_external.svg" alt="">
+                    <h1>$CONTENT1</h1>
+                </div>
+            </a>
