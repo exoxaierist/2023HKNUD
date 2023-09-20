@@ -5,10 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HKNUD 2023</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../style.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="scripts/smoothScroll.js" defer></script>
-    <script src="scripts/navOverlay.js" defer></script>
+    <script src="../scripts/smoothScroll.js" defer></script>
+    <script src="../scripts/navOverlay.js" defer></script>
+    <script src="../scripts/noFilter.js" defer></script>
 </head>
 <body>
     <section class="viewport">
@@ -16,8 +17,8 @@
         <div id="scroll-container">
     
             <!--BANNER IMAGE-->
-            <img src="X/images/banner-pc.png" alt="" class="projectBanner">
-            <img src="" alt="" class="projectBannerMobile">
+            <img src="../image/image_project/$ID/banner_pc.jpg" alt="" class="projectBanner">
+            <img src="../image/image_project/$ID/banner_mobile.jpg" alt="" class="projectBannerMobile">
             <!--PROJECT INFO-->
             <div class="projectInfo">
                 <div class="w80 aTop jLeft">
@@ -30,18 +31,14 @@
                         <h1>참여자</h1>
                         <br>
                         <div class="nameContainer">
-                            <h2><a href="profiletest.html">곽말숙</a></h2>
-                            <h2><a href="profiletest.html">황정필</a></h2>
-                            <h2><a href="profiletest.html">고동탁</a></h2>
-                            <h2><a href="profiletest.html">곽상우</a></h2>
-                            <h2><a href="profiletest.html">김갑수</a></h2>
+                            $STUDENTS
                         </div>
                     </div>
                     <div class="projectDesc">
-                        <h1>슬로건</h1>
+                        <h1>$SLOGAN</h1>
                         <br>
                         <p>
-                            $SLOGAN
+                            $DESC
                         </p>
                     </div>
                 </div>
@@ -49,6 +46,7 @@
         
             <div class="lineSeperator"></div>
             <div class="vgap50"></div>
+
             <!--COMP-->
 
             <div class="vGap100"></div>
@@ -59,7 +57,7 @@
         
             <div class="flex jCenter aTop">
                 <div id="archiveContainer" >
-                    <!--OTHER PROJECTS-->
+                    <!--PROJECT LIST-->
                 </div>
             </div>
             

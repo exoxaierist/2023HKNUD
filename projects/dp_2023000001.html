@@ -5,96 +5,79 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HKNUD 2023</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../style.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="scripts/smoothScroll.js" defer></script>
-    <script src="scripts/navOverlay.js" defer></script>
+    <script src="../scripts/smoothScroll.js" defer></script>
+    <script src="../scripts/navOverlay.js" defer></script>
+    <script src="../scripts/noFilter.js" defer></script>
 </head>
 <body>
     <section class="viewport">
+
         <div id="scroll-container">
-
-            <div id="pageID" class="overlayToggle">Profile</div>
-
-            <div class="vw100 flexcol aCenter jLeft">
-                <div class="profileWrapper">
-                    <img src="" alt="" class="profileImg">
-                    <div class="profileInfoContainer">
-                        <h1>홍길동</h1>
-                        <h3>Branding</h3>
-                        <h2>한줄 자기소개</h2>
+    
+            <!--BANNER IMAGE-->
+            <img src="../image/image_project/dp_2023000001/banner_pc.jpg" alt="" class="projectBanner">
+            <img src="../image/image_project/dp_2023000001/banner_mobile.jpg" alt="" class="projectBannerMobile">
+            <!--PROJECT INFO-->
+            <div class="projectInfo">
+                <div class="w80 aTop jLeft">
+                    <h2>Digital Project</h2>
+                    <div class="projectTitle">대충 프로젝트 이름</div>
+                </div>
+                <div class="vGap50"></div>
+                <div class="flex w80 aTop jBetween projectDetail">
+                    <div>
+                        <h1>참여자</h1>
                         <br>
-                        <br>
-                        <br>
-                        <div class="profileInfoLink">
-                            <img src="" alt="">
-                            <p>asdfqwer123@gmail.com</p>
+                        <div class="nameContainer">
+                             <h2><a href="../profiles/2023000001.html">조한민</a></h2>
                         </div>
-                        <a href="" class="profileInfoLink">
-                            <img src="" alt="">
-                            <p>@asdfqwer123</p>
-                        </a>
+                    </div>
+                    <div class="projectDesc">
+                        <h1>다같이 알잘딱하자 !</h1>
+                        <br>
+                        <p>
+                            
+                        </p>
                     </div>
                 </div>
             </div>
-            <div class="vGap100"></div>
+        
             <div class="lineSeperator"></div>
+            <div class="vgap50"></div>
+
+            
+
             <div class="vGap100"></div>
             <div class="flex jCenter">
-                <div class="projectOther">참여 프로젝트</div>
+                <div class="projectOther">다른 프로젝트 보기</div>
             </div>
             <div class="vGap50"></div>
         
             <div class="flex jCenter aTop">
                 <div id="archiveContainer" >
-                    <a href="project.html" class="itemContainer" style="display:block !important;">
-                        <div class="itemThumbnail" style="background-image: url('X/images/project-thumbnail.png');">
+                                        <a href="../projects/dp_2023000001.html" class="itemContainer itemDrag filterDP">
+                        <div class="itemThumbnail" style="background-image: url('image/image_project/dp_2023000001/thumbnail.jpg');">
                             <div class="w100 h100 flex jLeft aBottom">
                                 <div class="itemHoverInfo textOverflow">
-                                    <p class="textOverflow">(예시)슬로건이나 한줄설명</p>
-                                    <h3 class="textOverflow">조한민 김말뚝 홍갑쇠 엄치욱</h3>
+                                    <p class="textOverflow">다같이 알잘딱하자 !</p>
+                                    <h3 class="textOverflow">조한민</h3>
                                 </div>
                             </div>
                         </div>
                         <div class="itemInfoContainer">
-                            <h2 class="textOverflow">바나나 오징어 시계 열기구</h2>
-                            <p class="cGray itemCategory">Branding</p>
-                        </div>
-                    </a>
-                    <a href="project.html" class="itemContainer" style="display:block !important;">
-                        <div class="itemThumbnail" style="background-image: url('X/images/project-thumbnail.png');">
-                            <div class="w100 h100 flex jLeft aBottom">
-                                <div class="itemHoverInfo textOverflow">
-                                    <p class="textOverflow">(예시)슬로건이나 한줄설명</p>
-                                    <h3 class="textOverflow">조한민 김말뚝 홍갑쇠 엄치욱</h3>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="itemInfoContainer">
-                            <h2 class="textOverflow">바나나 오징어 시계 열기구</h2>
-                            <p class="cGray itemCategory">Branding</p>
-                        </div>
-                    </a>
-                    <a href="project.html" class="itemContainer" style="display:block !important;">
-                        <div class="itemThumbnail" style="background-image: url('X/images/project-thumbnail.png');">
-                            <div class="w100 h100 flex jLeft aBottom">
-                                <div class="itemHoverInfo textOverflow">
-                                    <p class="textOverflow">(예시)슬로건이나 한줄설명</p>
-                                    <h3 class="textOverflow">조한민 김말뚝 홍갑쇠 엄치욱</h3>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="itemInfoContainer">
-                            <h2 class="textOverflow">바나나 오징어 시계 열기구</h2>
-                            <p class="cGray itemCategory">Branding</p>
+                            <h2 class="textOverflow">대충 프로젝트 이름</h2>
+                            <p class="cGray itemCategory">3D</p>
                         </div>
                     </a>
                 </div>
             </div>
+            
 
             <div class="vGap100"></div>
             <div class="vGap100"></div>
-
+            
             <!--FOOTER-->
             <div class="flex jCenter aCenter">
                 <footer>
@@ -123,11 +106,8 @@
                     </div>
                 </footer>
             </div>
-            <!--END OF FOOTER-->
-            
         </div>
     </section>
-
 
 
 
@@ -226,7 +206,5 @@
         </div>
     </div>
     <!--END OF NAVIGATION-->
-
-
 </body>
 </html>

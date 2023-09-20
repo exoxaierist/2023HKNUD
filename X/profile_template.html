@@ -5,121 +5,54 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HKNUD 2023</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../style.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="scripts/smoothScroll.js" defer></script>
-    <script src="scripts/navOverlay.js" defer></script>
+    <script src="../scripts/smoothScroll.js" defer></script>
+    <script src="../scripts/navOverlay.js" defer></script>
+    <script src="../scripts/noFilter.js" defer></script>
 </head>
 <body>
     <section class="viewport">
-
         <div id="scroll-container">
-    
-            <!--BANNER IMAGE-->
-            <img src="X/images/banner-pc.png" alt="" class="projectBanner">
-            <img src="" alt="" class="projectBannerMobile">
-            <!--PROJECT INFO-->
-            <div class="projectInfo">
-                <div class="w80 aTop jLeft">
-                    <h2>$LECTURE</h2>
-                    <div class="projectTitle">$TITLE</div>
-                </div>
-                <div class="vGap50"></div>
-                <div class="flex w80 aTop jBetween projectDetail">
-                    <div>
-                        <h1>참여자</h1>
-                        <br>
-                        <div class="nameContainer">
-                            <h2><a href="profiletest.html">곽말숙</a></h2>
-                            <h2><a href="profiletest.html">황정필</a></h2>
-                            <h2><a href="profiletest.html">고동탁</a></h2>
-                            <h2><a href="profiletest.html">곽상우</a></h2>
-                            <h2><a href="profiletest.html">김갑수</a></h2>
+
+            <div id="pageID" class="overlayToggle">Profile</div>
+
+            <div class="vw100 flexcol aCenter jLeft">
+                <div class="profileWrapper">
+                    <img src="../image/image_profile/$ID.jpg" alt="" class="profileImg">
+                    <div class="profileInfoContainer">
+                        <div>
+                            <h1>$NAME</h1>
+                            <h3>$CAREER</h3>
+                            <h2>$DESC</h2>
+                        </div>
+                        <div>
+                            <div class="profileInfoLink">
+                                <img src="" alt="">
+                                <p>$EMAIL</p>
+                            </div>
+                            <!--LINK-->
                         </div>
                     </div>
-                    <div class="projectDesc">
-                        <h1>슬로건</h1>
-                        <br>
-                        <p>
-                            $SLOGAN
-                        </p>
-                    </div>
                 </div>
             </div>
-        
+            <div class="vGap100"></div>
             <div class="lineSeperator"></div>
-            <div class="vgap50"></div>
-            <!--COMP START-->
-        
-            <!--Youtube-->
-            <iframe src="https://www.youtube.com/embed/$CONTENT1" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen class="compYoutube"></iframe>
-            
-            <!--Vimeo-->
-            <iframe src="https://player.vimeo.com/video/$CONTENT1" width="640" height="272" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen class="compYoutube"></iframe>
-            
-            <!--Image-->
-            <img src="../image/image_project/$ID/$CONTENT1" alt="" class="compImage">
-            
-            <!--COMP TEXT_1-->
-            <div class="compSet1">
-                <div class="compTitle">$CONTENT1</div>
-                <h1>$CONTENT2</h1>
-                <br>
-                <br>
-                <p>
-                    $CONTENT3
-                </p>
-            </div>
-            
-            <!--COMP_TEXT_2-->
-            <div class="compSet2">
-                <h1>$CONTENT1</h1>
-                <br>
-                <p>
-                    $CONTENT2
-                </p>
-            </div>
-            
-            <!--COMP TEXT_3-->
-            <div class="compSet3">
-                <div class="compTitle">$CONTENT1</div>
-                <h1>$CONTENT2</h1>
-            </div>
-
-            <!--COMP END-->
-
-
-
-
             <div class="vGap100"></div>
             <div class="flex jCenter">
-                <div class="projectOther">다른 프로젝트 보기</div>
+                <div class="projectOther">참여 프로젝트</div>
             </div>
             <div class="vGap50"></div>
         
             <div class="flex jCenter aTop">
                 <div id="archiveContainer" >
-                    <a href="project.html" class="itemContainer" style="display:block !important;">
-                        <div class="itemThumbnail" style="background-image: url('X/images/project-thumbnail.png');">
-                            <div class="w100 h100 flex jLeft aBottom">
-                                <div class="itemHoverInfo textOverflow">
-                                    <p class="textOverflow">(예시)슬로건이나 한줄설명</p>
-                                    <h3 class="textOverflow">조한민 김말뚝 홍갑쇠 엄치욱</h3>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="itemInfoContainer">
-                            <h2 class="textOverflow">바나나 오징어 시계 열기구</h2>
-                            <p class="cGray itemCategory">Branding</p>
-                        </div>
-                    </a>
+<!--PROJECT LIST-->
                 </div>
             </div>
-            
 
             <div class="vGap100"></div>
             <div class="vGap100"></div>
-            
+
             <!--FOOTER-->
             <div class="flex jCenter aCenter">
                 <footer>
@@ -148,8 +81,11 @@
                     </div>
                 </footer>
             </div>
+            <!--END OF FOOTER-->
+            
         </div>
     </section>
+
 
 
 
@@ -248,5 +184,7 @@
         </div>
     </div>
     <!--END OF NAVIGATION-->
+
+
 </body>
 </html>

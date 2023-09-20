@@ -5,10 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HKNUD 2023</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../style.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="scripts/smoothScroll.js" defer></script>
-    <script src="scripts/navOverlay.js" defer></script>
+    <script src="../scripts/smoothScroll.js" defer></script>
+    <script src="../scripts/navOverlay.js" defer></script>
+    <script src="../scripts/noFilter.js" defer></script>
 </head>
 <body>
     <section class="viewport">
@@ -18,7 +19,7 @@
 
             <div class="vw100 flexcol aCenter jLeft">
                 <div class="profileWrapper">
-                    <img src="" alt="" class="profileImg">
+                    <img src="../image/image_profile/$ID.jpg" alt="" class="profileImg">
                     <div class="profileInfoContainer">
                         <div>
                             <h1>$NAME</h1>
@@ -31,16 +32,6 @@
                                 <p>$EMAIL</p>
                             </div>
                             <!--LINK-->
-                            <!--INSTAGRAM-->
-                            <a href="https://www.instagram.com/$INSTA/" class="profileInfoLink">
-                                <img src="" alt="">
-                                <p>@$INSTA</p>
-                            </a>
-                            <!--BEHANCE-->
-                            <a href="$BEHANCE" class="profileInfoLink">
-                                <img src="" alt="">
-                                <p>Behance</p>
-                            </a>
                         </div>
                     </div>
                 </div>

@@ -1,15 +1,14 @@
-
-                    <div class="itemContainer $FILTER" OnClick="location.href ='projects/$ID.html'">
-                        <div class="itemThumbnail">
+                    <a href="$DIRprojects/$ID.html" class="itemContainer itemDrag $FILTER">
+                        <div class="itemThumbnail" style="background-image: url('image/image_project/$ID/thumbnail.jpg');">
                             <div class="w100 h100 flex jLeft aBottom">
-                                <div class="itemHoverInfo">
-                                    <p>$DESC</p>
-                                    <h3>$STUDENTS</h3>
+                                <div class="itemHoverInfo textOverflow">
+                                    <p class="textOverflow">$SLOGAN</p>
+                                    <h3 class="textOverflow">$STUDENTS</h3>
                                 </div>
                             </div>
                         </div>
                         <div class="itemInfoContainer">
-                            <h2>$TITLE</h2>
-                            <p class="cGray">$CATEGORY</p>
+                            <h2 class="textOverflow">$TITLE</h2>
+                            <p class="cGray itemCategory">$CATEGORY</p>
                         </div>
-                    </div>
+                    </a>

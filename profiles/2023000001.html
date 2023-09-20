@@ -5,10 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HKNUD 2023</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../style.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="scripts/smoothScroll.js" defer></script>
-    <script src="scripts/navOverlay.js" defer></script>
+    <script src="../scripts/smoothScroll.js" defer></script>
+    <script src="../scripts/navOverlay.js" defer></script>
+    <script src="../scripts/noFilter.js" defer></script>
 </head>
 <body>
     <section class="viewport">
@@ -18,26 +19,24 @@
 
             <div class="vw100 flexcol aCenter jLeft">
                 <div class="profileWrapper">
-                    <img src="" alt="" class="profileImg">
+                    <img src="../image/image_profile/2023000001.jpg" alt="" class="profileImg">
                     <div class="profileInfoContainer">
                         <div>
-                            <h1>홍길동</h1>
-                            <h3>Branding</h3>
-                            <h2>한줄 자기소개</h2>
+                            <h1>조한민</h1>
+                            <h3>3D</h3>
+                            <h2>밥먹는 디자이너</h2>
                         </div>
                         <div>
                             <div class="profileInfoLink">
                                 <img src="" alt="">
-                                <p>asdfqwer123@gmail.com</p>
+                                <p>email.website.com</p>
                             </div>
-                            <!--LINK-->
-                            <!--INSTAGRAM-->
-                            <a href="https://www.instagram.com/$INSTA/" class="profileInfoLink">
+                                                        <!--INSTAGRAM-->
+                            <a href="https://www.instagram.com/monotone.jay/" class="profileInfoLink">
                                 <img src="" alt="">
-                                <p>@asdfqwer123</p>
-                            </a>
-                            <!--BEHANCE-->
-                            <a href="$BEHANCE" class="profileInfoLink">
+                                <p>@monotone.jay</p>
+                            </a>                            <!--BEHANCE-->
+                            <a href="https://www.behance.net/lanabalati" class="profileInfoLink">
                                 <img src="" alt="">
                                 <p>Behance</p>
                             </a>
@@ -55,7 +54,20 @@
         
             <div class="flex jCenter aTop">
                 <div id="archiveContainer" >
-                    <!--PROJECT LIST-->
+                    <a href="../projects/dp_2023000001.html" class="itemContainer itemDrag filterDP">
+                        <div class="itemThumbnail" style="background-image: url('image/image_project/dp_2023000001/thumbnail.jpg');">
+                            <div class="w100 h100 flex jLeft aBottom">
+                                <div class="itemHoverInfo textOverflow">
+                                    <p class="textOverflow">다같이 알잘딱하자 !</p>
+                                    <h3 class="textOverflow">조한민</h3>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="itemInfoContainer">
+                            <h2 class="textOverflow">대충 프로젝트 이름</h2>
+                            <p class="cGray itemCategory">3D</p>
+                        </div>
+                    </a>
                 </div>
             </div>
 
