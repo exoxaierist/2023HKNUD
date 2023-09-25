@@ -13,17 +13,31 @@ $(buttons).on("mouseexit",Clear);
 
 let navOverlay = document.querySelector("#navOverlay");
 let navXbtn = document.querySelector(".navXBtn");
+
+let navPageTop = $(".navPageTop");
+let navPageBottom = 4(".navPageBottom");
+
+let navMOpen = $(".navMOpen");
+let navMClose = $(".navMClose");
+let navMCloseArea = $(".navMCloseArea");
+let navMContainer = $(".navMContainer");
+
 let overlayState = false;
 
 $(".overlayToggle").on("click",ToggleOverlay)
 window.onscroll = ScrollCloseOverlay;
+navMOpen.on("click",()=>navMContainer.addClass("navMContainerOpen"));
+navMClose.on("click",MScrollCloseOverlay);
+navMCloseArea.on("click",MScrollCloseOverlay);
 
-
-
+function MScrollCloseOverlay(){
+    navMContainer.removeClass("navMContainerOpen");
+}
 function ScrollCloseOverlay(){
     if(overlayState){
         ToggleOverlay();
     }
+    MScrollCloseOverlay();
 }
 
 function ToggleOverlay(){
@@ -38,7 +52,6 @@ function ToggleOverlay(){
         //open
         navOverlay.style.top = "0vh";
         overlayState = true;
-        navXbtn.style.rotate = "135deg";
         document.querySelector(".navOverlayCancel").style.display = "initial";
     }
 }

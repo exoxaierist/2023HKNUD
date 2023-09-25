@@ -192,7 +192,7 @@ with open(target_archive,'w',encoding='UTF-8') as file:
 
 
 # edit students html file
-with open(target_archive,'r',encoding='UTF-8') as file:
+with open(target_students,'r',encoding='UTF-8') as file:
     html = file.read()
 
 _student_items = ""
@@ -201,9 +201,8 @@ for key,info in student_list.items():
         replace("$NAME",info.name).\
         replace("$CAREER",info.career).\
         replace("$ID",key)
-
 html = re.sub(r"<!--STUDENT LIST START-->(.*?)<!--STUDENT LIST END-->",f"<!--STUDENT LIST START-->{_student_items}<!--STUDENT LIST END-->",html,flags=re.DOTALL)
-with open(target_archive,'w',encoding='UTF-8') as file:
+with open(target_students,'w',encoding='UTF-8') as file:
     file.write(html)
 
 

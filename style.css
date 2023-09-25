@@ -52,13 +52,7 @@ body{
 
 
 
-#pageID{
-    position: relative;
-    left: 10vw;
-    font-size: 3vw;
-    font-weight: 900;
-    padding: 3.5vw 0px;
-}
+
 
 
 
@@ -91,7 +85,13 @@ header{
 
 
 
-
+#pageID{
+    position: relative;
+    left: 10vw;
+    font-size: 3rem;
+    font-weight: 900;
+    padding: 3rem 0px;
+}
 #navOverlay{
     position: fixed;
     top: -30vh;
@@ -110,7 +110,7 @@ header{
     border-color: var(--Highlight);
     border-bottom-style: solid;
 
-    transition: 0.2s;
+    transition: 0.2s top;
     transition-timing-function: cubic-bezier(1, 0, 0, 1);
 }
 .navOverlayCancel{
@@ -129,10 +129,25 @@ header{
     align-items: center;
 }
 .navXBtn{
-    width: 50px;
-    height: 50px;
-    rotate: 0deg;
-    transition-duration: 0.3s;
+    position: fixed;
+    width: 2rem;
+    height: 2rem;
+    left: calc(90vw + 5vw - 1rem);
+    top: 4rem;
+}
+.navPageTop{
+    position: fixed;
+    width: 2rem;
+    height: 2rem;
+    left: calc(90vw + 5vw - 1rem);
+    bottom: 8rem;
+}
+.navPageBottom{
+    position: fixed;
+    width: 2rem;
+    height: 2rem;
+    left: calc(90vw + 5vw - 1rem);
+    bottom: 4rem;
 }
 
 #navOverlayBtnGroup{
@@ -236,6 +251,64 @@ header{
 .delay4{transition-delay: 0.4s;}
 
 
+.navMOpen{
+    position: fixed;
+    width: 2rem;
+    height: 2rem;
+    left: calc(90vw - 2rem);
+    top: 4rem;
+}
+.navMClose{
+    position: relative;
+    width: 2rem;
+    height: 2rem;
+    z-index: 10;
+    margin-bottom: 1rem;
+}
+.navMCloseArea{
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    top: 17.5rem;
+}
+.navMContainer{
+    padding-top: 2rem;
+    position: fixed;
+    top: -22rem;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    align-items: center;
+    border-bottom: 1px solid var(--Highlight);
+    transition: top 0.2s;
+}
+.navMContainerOpen{
+    top: 0rem !important;
+}
+.navMBtn{
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem 0rem;
+    font-weight: 800;
+    font-size: 1.5rem;
+}
+.navMBtnCurrent{
+    color: var(--Highlight);
+}
+#navMobile{
+    display: none;
+}
+@media screen and (max-width:949px){
+    #navPC{
+        display: none;
+    }
+    #navMobile{
+        display: unset;
+    }
+}
 
 
 
@@ -320,36 +393,34 @@ header{
     flex-wrap: wrap;
 }
 
-@media screen and (min-width:1200px){
+@media screen and (min-width:950px){
     .itemContainer{
         display: none;
         width: calc(((80vw + 0.8vw) / 4) - 0.8vw);
         height: calc(((80vw + 0.8vw) / 4) - 0.8vw);
     }
 }
-@media screen and (min-width:950px) and (max-width:1199px){
-    .itemContainer{
-        display: none;
-        width: calc(((80vw + 0.8vw) / 3) - 0.8vw);
-        height: calc(((80vw + 0.8vw) / 3) - 0.8vw);
-    }
-}
 @media screen and (max-width:945px){
     .itemContainer{
         display: none;
-        width: calc(((90vw + 1.5vw) / 2) - 1.5vw);
-        height: calc(((90vw + 1.5vw) / 2) - 1.5vw);
+        width: calc(((80vw + 1.5vw) / 2) - 1.5vw);
+        height: calc(((80vw + 1.5vw) / 2) - 1.5vw);
     }
     #archiveContainer{
-        width: 90vw;
+        width: 80vw;
         column-gap: 1.5vw;
         row-gap: 3.5rem;
     
         display: flex;
         flex-wrap: wrap;
     }
+    .classDesc{
+        display: none;
+        width: 80vw;
+        padding-top: 3rem;
+    }
 }
-@media screen and (max-width:550px){
+@media screen and (max-width:450px){
     .itemCategory{
         display: none;
     }
@@ -455,7 +526,7 @@ header{
     top: 3.5rem;
     left: 1rem;
     font-size: 1.1rem;
-    font-weight: 300;
+    font-weight: 400;
 }
 
 
