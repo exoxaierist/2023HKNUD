@@ -8,8 +8,8 @@
     <link rel="stylesheet" href="style.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="scripts/archiveFilter.js" defer></script>
-    <script src="scripts/navOverlay.js" defer></script>
     <script src="scripts/smoothScroll.js" defer></script>
+    <script src="scripts/navOverlay.js" defer></script>
     <script src="scripts/itemDrag.js" defer></script>
 </head>
 <body>
@@ -23,12 +23,16 @@
                     <div id="filterContainer">
                         <div class="filterGroup">
                             <button class="allBtn textOverflow" filter="ALL" filterGroup="0">전체</button>
-                            <button class="filterBtn textOverflow" filter="filterDP" filterGroup="0">디지털 융합 프로젝트</button>
-                            <button class="filterBtn textOverflow" filter="filterBM" filterGroup="0">브랜드 매니지먼트</button>
-                            <button class="filterBtn textOverflow" filter="filterVP" filterGroup="0">시각 프로젝트</button>
-                            <button class="filterBtn textOverflow" filter="filterIB" filterGroup="0">인터랙션 비즈니스</button>
+                            <div class="filterSubGroup">
+                                <button class="filterBtn textOverflow" filter="filterDP" filterGroup="0">디지털 융합 프로젝트</button>
+                                <button class="filterBtn textOverflow" filter="filterBM" filterGroup="0">브랜드 매니지먼트</button>
+                            </div>
+                            <div class="filterSubGroup">
+                                <button class="filterBtn textOverflow" filter="filterVP" filterGroup="0">시각 프로젝트</button>
+                                <button class="filterBtn textOverflow" filter="filterIB" filterGroup="0">인터랙션 비즈니스</button>
+                            </div>
                         </div>
-                        <div class="filterGroup">
+                        <div class="filterGroup filterHide">
                             <button class="allBtn textOverflow" filter="ALL" filterGroup="1">전체</button>
                             <button class="filterBtn textOverflow" filter="filter3d" filterGroup="1">3D</button>
                             <button class="filterBtn textOverflow" filter="filterBrand" filterGroup="1">Branding</button>
@@ -363,7 +367,7 @@
             <div class="w80 flex jLeft"><img src="" alt="" class="bgGray" style="width: 300px;height: 50px;opacity: 50%;"></div>
             
             <div id="navOverlayBtnGroup">
-                <div class="navOverlayBtn" OnClick="location.href ='index.html'">
+                <div class="navOverlayBtn" OnClick="location.href ='intro.html'">
                     <div class="navOverlayBtnBackground"></div>
                     <div class="navOverlayBtnText">Home
                         <div class="arrowTarget">
@@ -447,13 +451,13 @@
     <div id="navMobile">
         <img src="image/icons/icon_bars.svg" alt="" class="navMOpen">
         <div class="navMContainer">
-            <a href="" class="navMBtn">Home</a>
-            <a href="" class="navMBtn navMBtnCurrent">Projects</a>
-            <a href="" class="navMBtn">Students</a>
-            <a href="" class="navMBtn">About</a>
+            <a href="intro.html" class="navMBtn">Home</a>
+            <div class="navMBtn navMBtnCurrent">Projects</div>
+            <a href="students.html" class="navMBtn">Students</a>
+            <a href="about.html" class="navMBtn">About</a>
             <img src="image/icons/icon_arrowup.svg" alt="" class="navMClose">
         </div>
-        <div class="navMCloseArea"></div>
+        <div class="navMCloseArea navMCloseAreaHide"></div>
     </div>
     <!--END OF NAVIGATION-->
 

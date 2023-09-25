@@ -134,6 +134,7 @@ header{
     height: 2rem;
     left: calc(90vw + 5vw - 1rem);
     top: 4rem;
+    transition: opacity 0.3s;
 }
 .navPageTop{
     position: fixed;
@@ -271,6 +272,9 @@ header{
     height: 100vh;
     top: 17.5rem;
 }
+.navMCloseAreaHide{
+    pointer-events: none;
+}
 .navMContainer{
     padding-top: 2rem;
     position: fixed;
@@ -327,20 +331,7 @@ header{
     justify-content: start;
     flex-wrap: wrap;
 }
-@media screen and (max-width:950px){
-    #filterContainer{
-        display: flex;
-        flex-direction: column;
-        width: 90vw;
-        align-items: start;
-        gap: 2rem;
-    }
-    .filterGroup{
-        column-gap: 20px;
-        display: flex;
-        justify-content: center;
-    }
-}
+
 .filterBtn{
     font-size: 1.1rem;
     font-weight: 500;
@@ -379,6 +370,38 @@ header{
     padding-top: 3rem;
 }
 
+@media screen and (max-width:949px){
+    #filterContainer{
+        display: flex;
+        flex-direction: row;
+        width: 80vw;
+        justify-content: space-between;
+        align-items: start;
+        gap: 2rem;
+    }
+    .filterGroup{
+        width: 100%;
+        display: flex;
+        gap: 1rem;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .filterSubGroup{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+    .filterHide{
+        display: none !important;
+        position: fixed !important;
+    }
+    .filterBtn{
+        width: 50%;
+        font-size: 1rem;
+    }
+}
+
 
 
 
@@ -400,7 +423,7 @@ header{
         height: calc(((80vw + 0.8vw) / 4) - 0.8vw);
     }
 }
-@media screen and (max-width:945px){
+@media screen and (max-width:949px){
     .itemContainer{
         display: none;
         width: calc(((80vw + 1.5vw) / 2) - 1.5vw);
@@ -530,6 +553,34 @@ header{
 }
 
 
+@media screen and (max-width:949px){
+    .studentContainerM{
+        position: relative;
+        width: calc(((80vw + 0.8vw) / 2) - 0.8vw);
+        height: calc(((80vw + 0.8vw) / 2) - 0.8vw);
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+}
+@media screen and (max-width:499px){
+    .studentListNameM{
+        position: absolute;
+        top: 1rem;
+        left: 1rem;
+        font-size: 1.3rem;
+        font-weight: 600;
+        letter-spacing: 0.1rem;
+    }
+    .studentListRoleM{
+        position: absolute;
+        top: 2.7rem;
+        left: 1rem;
+        font-size: 1rem;
+        font-weight: 400;
+    }
+}
+
 
 .studentsPc{
     width: 80vw;
@@ -633,6 +684,19 @@ header{
     border-bottom: 2px solid var(--Highlight);
 }
 
+@media screen and (max-width:949px){
+    .profileImg{
+        background-color: var(--LightGray);
+        width: calc(((80vw + 0.8vw) / 2) - 0.8vw);
+        height: calc(((80vw + 0.8vw) / 2) - 0.8vw);
+        object-fit: cover;
+    }
+    .profileInfoContainer h3{
+        display: block;
+        padding-left: 0px;
+        font-size: 1.4rem;
+    }
+}
 
 
 
