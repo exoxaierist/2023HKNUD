@@ -8,7 +8,6 @@
     <link rel="stylesheet" href="../style.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="../scripts/smoothScroll.js" defer></script>
-    <script src="../scripts/navOverlay.js" defer></script>
     <script src="../scripts/noFilter.js" defer></script>
 </head>
 <body>
@@ -28,7 +27,7 @@
                 <div class="vGap50"></div>
                 <div class="flex w80 aTop jBetween projectDetail">
                     <div>
-                        <h1>참여자</h1>
+                        <h1>참여자<img src="../image/icons/icon_external.svg" alt="" srcset="" style="position: relative;width:1.5rem; top: 0.3rem;left: 0.2rem;"></h1>
                         <br>
                         <div class="nameContainer">
                             $STUDENTS
@@ -49,7 +48,7 @@
 
             <!--COMP-->
 
-            <div class="vGap100"></div>
+            <div class="vGap50"></div>
             <div class="flex jCenter">
                 <div class="projectOther">다른 프로젝트 보기</div>
             </div>
@@ -61,10 +60,6 @@
                 </div>
             </div>
             
-
-            <div class="vGap100"></div>
-            <div class="vGap100"></div>
-            
             <!--FOOTER-->
             <div class="flex jCenter aCenter">
                 <footer>
@@ -73,7 +68,7 @@
                         <h4>
                             2023 한경국립대학교 디자인학과
                             <br>
-                            제 26회 졸업전시회 : A Star
+                            제 26회 졸업전시회 : 
                         </h4>
                     </div>
                     <div class="footerLinks">
@@ -99,98 +94,104 @@
 
 
     <!--NAVIGATION-->
-    <div id="navOverlay">
-        <div class="vgap50"></div>
-        <div class="w80 flex jLeft"><img src="" alt="" class="bgGray" style="width: 300px;height: 50px;opacity: 50%;"></div>
-        
-        <div id="navOverlayBtnGroup">
-            <div class="navOverlayBtn" OnClick="location.href ='../index.html'">
-                <div class="navOverlayBtnBackground"></div>
-                <div class="navOverlayBtnText">Home
-                    <div class="arrowTarget">
-                        <div class="pGroup">
-                            <div class="circleGlobal delay1"></div>
-                            <div class="arrowGlobal delay4" style="width: 60px; rotate:-90deg"></div>
-                            <div class="arrowGlobal delay3" style="width: 60px; rotate:0deg"></div>
-                            <div class="circleGlobal delay2" style="top: -60px;"></div>
-                            <div class="circleGlobal delay2" style="left: 60px;"></div>
-                        </div>
-                    </div>
-                </div>
-                <div class="arrowGroup">
-                    <div class="circleGlobal arrowCircle"style="left:90vw;top:50px;"></div>
-                    <div class="arrowLine arrowGlobal"></div>
-                    
-                </div>
-            </div>
-            <div class="navOverlayBtn" OnClick="location.href ='../archive.html'">
-                <div class="navOverlayBtnBackground"></div>
-                <div class="navOverlayBtnText">Projects
-                    <div class="arrowTarget">
-                        <div class="pGroup">
-                            <div class="circleGlobal delay1"></div>
-                            <div class="arrowGlobal delay3" style="width: 60px; rotate:-90deg"></div>
-                            <div class="arrowGlobal delay4" style="width: 60px; rotate:0deg"></div>
-                            <div class="circleGlobal delay2" style="top: -60px;"></div>
-                            <div class="circleGlobal delay2" style="left: 60px;"></div>
-                        </div>
-                    </div>
-                </div>
-                <div class="arrowGroup">
-                    <div class="circleGlobal arrowCircle"style="left:90vw;top:50px;"></div>
-                    <div class="arrowLine arrowGlobal"></div>
-                </div>
-            </div>
-            <div class="navOverlayBtn" OnClick="location.href ='../students.html'">
-                <div class="navOverlayBtnBackground"></div>
-                <div class="navOverlayBtnText">Students
-                    <div class="arrowTarget">
-                        <div class="pGroup">
-                            <div class="circleGlobal delay1"></div>
-                            <div class="arrowGlobal delay3" style="width: 60px; rotate:-90deg"></div>
-                            <div class="arrowGlobal delay3" style="width: 60px; rotate:0deg"></div>
-                            <div class="circleGlobal delay2" style="top: -60px;"></div>
-                            <div class="circleGlobal delay2" style="left: 60px;"></div>
-                        </div>
-                    </div>
-                </div>
-                <div class="arrowGroup">
-                    <div class="circleGlobal arrowCircle"style="left:90vw;top:50px;"></div>
-                    <div class="arrowLine arrowGlobal"></div>
-                </div>
-            </div>
-            <div class="navOverlayBtn" OnClick="location.href ='../about.html'">
-                <div class="navOverlayBtnBackground"></div>
-                <div class="navOverlayBtnText">About
-                    <div class="arrowTarget">
-                        <div class="pGroup" style="margin-left: -6px;">
-                            <div class="circleGlobal delay1"></div>
-                            <div class="arrowGlobal delay4" style="width: 60px; rotate:-90deg"></div>
-                            <div class="arrowGlobal delay3" style="width: 60px; rotate:0deg"></div>
-                            <div class="circleGlobal delay2" style="top: -60px;"></div>
-                            <div class="circleGlobal delay2" style="left: 60px;"></div>
-                        </div>
-                    </div>
-                </div>
-                <div class="arrowGroup">
-                    <div class="circleGlobal arrowCircle"style="left:90vw;top:50px;"></div>
-                    <div class="arrowLine arrowGlobal"></div>
-                    
-                </div>
-            </div>
-        </div>
-        <div class="navOverlayCancel overlayToggle"></div>
+    <div id="navPC">
 
-    </div>
-    <div class="navXContainer">
-        <div class="navXBtn overlayToggle">
-            <div class="arrowGlobal" style="width: 50px; left: 26px; rotate:90deg; scale: 1 1 !important; position: relative !important;"></div>
-            <div class="arrowGlobal" style="width: 50px; top: 24px; scale: 1 1 !important; position: relative !important;"></div>
-            <div class="circleGlobal"style="left:5px;top:26px; scale:1 !important"></div>
-            <div class="circleGlobal"style="left:45px;top:26px; scale:1 !important"></div>
-            <div class="circleGlobal"style="left:25px;top:5px; scale:1 !important"></div>
-            <div class="circleGlobal"style="left:25px;top:45px; scale:1 !important"></div>
+        <div id="navOverlay">
+            <div class="vgap50"></div>
+            <div class="w80 flex jLeft"><img src="" alt="" class="bgGray" style="width: 300px;height: 50px;opacity: 50%;"></div>
+            
+            <div id="navOverlayBtnGroup">
+                <div class="navOverlayBtn" OnClick="location.href ='../intro.html'">
+                    <div class="navOverlayBtnBackground"></div>
+                    <div class="navOverlayBtnText">Home
+                        <div class="arrowTarget">
+                            <div class="pGroup">
+                                <div class="circleGlobal delay1"></div>
+                                <div class="arrowGlobal delay4" style="width: 60px; rotate:-90deg"></div>
+                                <div class="arrowGlobal delay3" style="width: 60px; rotate:0deg"></div>
+                                <div class="circleGlobal delay2" style="top: -60px;"></div>
+                                <div class="circleGlobal delay2" style="left: 60px;"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="arrowGroup">
+                        <div class="circleGlobal arrowCircle"style="left:90vw;top:50px;"></div>
+                        <div class="arrowLine arrowGlobal"></div>
+                        
+                    </div>
+                </div>
+                <div class="navOverlayBtn" OnClick="location.href ='../archive.html'">
+                    <div class="navOverlayBtnBackground"></div>
+                    <div class="navOverlayBtnText">Projects
+                        <div class="arrowTarget">
+                            <div class="pGroup">
+                                <div class="circleGlobal delay1"></div>
+                                <div class="arrowGlobal delay3" style="width: 60px; rotate:-90deg"></div>
+                                <div class="arrowGlobal delay4" style="width: 60px; rotate:0deg"></div>
+                                <div class="circleGlobal delay2" style="top: -60px;"></div>
+                                <div class="circleGlobal delay2" style="left: 60px;"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="arrowGroup">
+                        <div class="circleGlobal arrowCircle"style="left:90vw;top:50px;"></div>
+                        <div class="arrowLine arrowGlobal"></div>
+                    </div>
+                </div>
+                <div class="navOverlayBtn" OnClick="location.href ='../students.html'">
+                    <div class="navOverlayBtnBackground"></div>
+                    <div class="navOverlayBtnText">Students
+                        <div class="arrowTarget">
+                            <div class="pGroup">
+                                <div class="circleGlobal delay1"></div>
+                                <div class="arrowGlobal delay3" style="width: 60px; rotate:-90deg"></div>
+                                <div class="arrowGlobal delay3" style="width: 60px; rotate:0deg"></div>
+                                <div class="circleGlobal delay2" style="top: -60px;"></div>
+                                <div class="circleGlobal delay2" style="left: 60px;"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="arrowGroup">
+                        <div class="circleGlobal arrowCircle"style="left:90vw;top:50px;"></div>
+                        <div class="arrowLine arrowGlobal"></div>
+                    </div>
+                </div>
+                <div class="navOverlayBtn" OnClick="location.href ='../about.html'">
+                    <div class="navOverlayBtnBackground"></div>
+                    <div class="navOverlayBtnText">About
+                        <div class="arrowTarget">
+                            <div class="pGroup" style="margin-left: -6px;">
+                                <div class="circleGlobal delay1"></div>
+                                <div class="arrowGlobal delay4" style="width: 60px; rotate:-90deg"></div>
+                                <div class="arrowGlobal delay3" style="width: 60px; rotate:0deg"></div>
+                                <div class="circleGlobal delay2" style="top: -60px;"></div>
+                                <div class="circleGlobal delay2" style="left: 60px;"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="arrowGroup">
+                        <div class="circleGlobal arrowCircle"style="left:90vw;top:50px;"></div>
+                        <div class="arrowLine arrowGlobal"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="navOverlayCancel overlayToggle"></div>
+    
         </div>
+        <img src="../image/icons/icon_bars.svg" alt="" class="navXBtn overlayToggle">
+        <img src="../image/icons/icon_pagetop.svg" alt="" class="navPageTop">
+        <img src="../image/icons/icon_pagebottom.svg" alt="" class="navPageBottom">
+    </div>
+    <div id="navMobile">
+        <img src="../image/icons/icon_bars.svg" alt="" class="navMOpen">
+        <div class="navMContainer">
+            <a href="../intro.html" class="navMBtn">Home</a>
+            <a href="../archive.html" class="navMBtn">Projects</a>
+            <a href="../students.html" class="navMBtn">Students</a>
+            <a href="../about.html" class="navMBtn">About</a>
+            <img src="../image/icons/icon_arrowup.svg" alt="" class="navMClose">
+        </div>
+        <div class="navMCloseArea navMCloseAreaHide"></div>
     </div>
     <!--END OF NAVIGATION-->
 </body>

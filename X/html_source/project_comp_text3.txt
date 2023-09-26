@@ -1,6 +1,0 @@
-
-            <!--COMP TEXT_3-->
-            <div class="compSet3">
-                <div class="compTitle">$CONTENT1</div>
-                <h1>$CONTENT2</h1>
-            </div>

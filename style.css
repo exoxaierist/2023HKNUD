@@ -494,6 +494,8 @@ header{
     transition-delay: 0.05s;
 }
 .itemCategory{
+    position: relative;
+    top: -0.2rem;
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
@@ -706,6 +708,9 @@ header{
     background-color: gray;
     object-fit: cover;
 }
+.projectBannerMobile{
+    display: none;
+}
 .projectInfo{
     width: 100vw;
 
@@ -727,38 +732,32 @@ header{
     font-size: 4rem;
     font-weight: 800;
 }
-@media screen and (max-width:600px){
-    .projectDetail{flex-direction: column; gap: 50px;}
-    .projectDesc{width: 100%;}
-    .projectTitle{
-        font-size: 2rem;
-    }
-}
+
 .nameContainer{
     display: flex;
     flex-wrap: wrap;
     gap: 5px;
 }
 .compYoutube{
+    padding-top: 25px;
     width: 80vw;
     height: calc(80vw * 9/16);
     margin-left: 10%;
-    padding-bottom: 50px;
+    padding-bottom: 25px;
 }
 .compImage{
     width: 100vw;
     object-fit: cover;
-    font-size: 0px;
-    clear:both;
+    display: block;
 }
 .compSet1{
-    width: 50%;
+    width: 80%;
     margin-left: 10%;
     padding-top: 50px;
     padding-bottom: 50px;
 }
 .compSet2{
-    width: 50%;
+    width: 80%;
     margin-left: 10%;
     padding-top: 50px;
     padding-bottom: 50px;
@@ -808,6 +807,26 @@ header{
     font-size: 2rem;
     font-weight: 600;
 }
+@media screen and (max-width:600px){
+    .projectDetail{flex-direction: column; gap: 50px;}
+    .projectDesc{width: 100%;}
+    .projectTitle{
+        font-size: 2.5rem;
+    }
+    .projectBanner{
+        display: none;
+    }
+    .projectBannerMobile{
+        display: block;
+        width: 100vw;
+        height: 80vw;
+        background-color: gray;
+        object-fit: cover;
+    }
+}
+
+
+
 
 
 

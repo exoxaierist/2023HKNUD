@@ -1,9 +1,6 @@
 
-            <!--COMP_TEXT_2-->
-            <div class="compSet2">
-                <h1>$CONTENT1</h1>
-                <br>
-                <p>
-                    $CONTENT2
-                </p>
+            <!--COMP TEXT_2-->
+            <div class="compSet3">
+                <div class="compTitle">$CONTENT1</div>
+                <h1>$CONTENT2</h1>
             </div>
