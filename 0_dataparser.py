@@ -4,8 +4,8 @@ import os
 import re
 
 # directories
-dir_csv_id = "/X/0919_idtest.csv"
-dir_csv_profile = "/X/1004_profile.csv"
+dir_csv_id = "/X/1010_idlist.csv"
+dir_csv_profile = "/X/1010_profile.csv"
 dir_csv_project = "/X/csvs"
 dir_target_project = "/projects"
 dir_target_profile = "/profiles"
@@ -63,17 +63,8 @@ class Project:
     student_id: list
     student_role: list
     comp: list
-    def __init__():
+    def __init__(self):
         pass
-    def __init__(self,lecture,name,slogan,desc,students,student_id,student_role,comp):
-        self.lecture = lecture
-        self.title = name
-        self.slogan = slogan
-        self.desc = desc
-        self.students = students
-        self.student_id = student_id
-        self.student_role = student_role
-        self.comp = comp
 
 class Student:
     name: str
@@ -83,7 +74,7 @@ class Student:
     insta: str
     behance: str
     projects: list
-    def __init__():
+    def __init__(self):
         pass
     def __init__(self,name,desc,email,career,insta,behance):
         self.name = name
@@ -124,13 +115,12 @@ for i in range(1,len(rawdata_profile)):
 # make projects list
 for filename in os.listdir(cwd + dir_csv_project +"/"):
     if filename.removesuffix(".csv") in id_list:
-        _instance = Project
+        _instance = Project()
         _id = filename.removesuffix(".csv")
         # read csv file into list
         with open( dir_csv_project.removeprefix('/') + '/' + filename,'r',encoding="UTF-8") as file:
             rawdata_project = csv.reader(file)
             rawdata_project = list(rawdata_project)
-            
         _instance.category = rawdata_project[3][1]
         _instance.sub_category = rawdata_project[3][3]
         _instance.title = rawdata_project[4][1]
@@ -154,11 +144,14 @@ for filename in os.listdir(cwd + dir_csv_project +"/"):
         _instance.comp = comp
         # make project dictionary
         project_list[filename.removesuffix(".csv")] = _instance
+        
+
 
 
 def make_project_item(id,sub):
     _info = project_list[id]
     filterList = "filter" + id[:2].upper()
+    filterList += " filter" + project_list[id].category
     filterList += " filter" + project_list[id].sub_category
     return html_archive_project.\
         replace("$SLOGAN",_info.slogan).\
@@ -210,7 +203,7 @@ with open(target_students,'w',encoding='UTF-8') as file:
 
 # create project html files
 for key, info in project_list.items():
-    print("writing project : ", key)
+    #print("writing project : ", key)
     html = open(dir_target_project.removeprefix('/') + '/' + key + ".html",'w',encoding="UTF-8")
     
     # student info
@@ -287,7 +280,7 @@ for key, info in project_list.items():
 # create profile html files
 
 for key,info in student_list.items():
-    print("writing profile : ", key)
+    #print("writing profile : ", key)
     html = open(dir_target_profile.removeprefix('/') + '/' + key + ".html",'w',encoding="UTF-8")
     
     _write_link =""
