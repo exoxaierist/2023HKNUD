@@ -1,6 +1,7 @@
  
                     <a href="$DIRprojects/$ID.html" class="itemContainer itemDrag $FILTER">
                         <div class="itemThumbnail" style="background-image: url('$DIRimage/image_project/$ID/thumbnail.jpg');">
+                            <img src="image/theme/PNG/itemGradient.png" alt="" class="itemThumbnailGrad">
                             <div class="w100 h100 flex jLeft aBottom">
                                 <div class="itemHoverInfo textOverflow">
                                     <p class="textOverflow">$SLOGAN</p>
