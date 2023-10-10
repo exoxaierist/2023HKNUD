@@ -3,7 +3,7 @@ import os
 import csv
 
 root = "/image/image_project"
-src = "/X/0919_idtest.csv"
+src = "/X/1004_idlist.csv"
 local_dir = os.getcwd()
 
 # read csv

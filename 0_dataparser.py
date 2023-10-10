@@ -5,7 +5,7 @@ import re
 
 # directories
 dir_csv_id = "/X/0919_idtest.csv"
-dir_csv_profile = "/X/0919_profiletest.csv"
+dir_csv_profile = "/X/1004_profile.csv"
 dir_csv_project = "/X/csvs"
 dir_target_project = "/projects"
 dir_target_profile = "/profiles"
@@ -194,7 +194,8 @@ with open(target_students,'r',encoding='UTF-8') as file:
     html = file.read()
 
 _student_items = ""
-for key,info in student_list.items():
+_sorted_student_list = sorted(student_list.items(), key=lambda x:x[1].name)
+for key,info in _sorted_student_list:
     _student_items += html_students_item.\
         replace("$NAME",info.name).\
         replace("$CAREER",info.career).\
@@ -269,9 +270,10 @@ for key, info in project_list.items():
     # get releated projects
     related_projects_id = []
     for _student_id in info.student_id:
-        for _project_id in student_list[_student_id].projects:
-            if _project_id not in related_projects_id and _project_id != key:
-                related_projects_id.append(_project_id)
+        if _student_id in student_list.keys():
+            for _project_id in student_list[_student_id].projects:
+                if _project_id not in related_projects_id and _project_id != key:
+                    related_projects_id.append(_project_id)
     related_projects=""
     for _id in related_projects_id:
         related_projects += make_project_item(_id,True)
@@ -290,8 +292,10 @@ for key,info in student_list.items():
     
     _write_link =""
     if info.insta != "":
-        _write_link += html_profile_link_insta.replace("$INSTA",info.insta)
+        _write_link += html_profile_link_insta.replace("$INSTA",info.insta.replace("@",""))
     if info.behance != "":
+        if not info.behance.startswith("http"):
+            info.behance = "http://" + info.behance
         _write_link += html_profile_link_behance.replace("$BEHANCE",info.behance)
     
     _write_projects =""

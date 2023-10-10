@@ -27,9 +27,9 @@ body{
     --LightGray: #dddddd;
     --LighterGray: #eeeeee;
     --Gray: #aaaaaa;
-    --Highlight: rgb(255, 51, 102);
-    --HighlightSemiTrans: rgb(255, 51, 102,0.4);
-    --HighlightTrans: rgb(255, 51, 102,0);
+    --Highlight: rgb(0, 150, 254);
+    --HighlightSemiTrans: rgb(0, 150, 254,0.4);
+    --HighlightTrans: rgb(0, 150, 254,0);
     font-size: 0.85em;
 }
 ::selection{
@@ -48,6 +48,14 @@ body{
 ::-webkit-scrollbar-track{
     background-color: transparent;
 }
+
+
+
+
+
+    
+
+
 
 
 
@@ -220,7 +228,7 @@ header{
     width: 10px;
     height: 10px;
     border-radius: 5px;
-    background-color: black;
+    background-color: var(--Black);
     scale: 0;
     transition: scale 0.1s;
     transform-origin: center center;
@@ -548,9 +556,10 @@ header{
 }
 .studentListRoleM{
     position: absolute;
+    width: 15vw;
     top: 3.5rem;
     left: 1rem;
-    font-size: 1.1rem;
+    font-size: 0.9rem;
     font-weight: 400;
 }
 
@@ -564,6 +573,14 @@ header{
         flex-direction: row;
         justify-content: center;
     }
+    .studentListRoleM{
+        position: absolute;
+        width: 30vw;
+        top: 3.5rem;
+        left: 1rem;
+        font-size: 1rem;
+        font-weight: 400;
+    }
 }
 @media screen and (max-width:499px){
     .studentListNameM{
@@ -576,9 +593,10 @@ header{
     }
     .studentListRoleM{
         position: absolute;
+        width: 30vw;
         top: 2.7rem;
         left: 1rem;
-        font-size: 1rem;
+        font-size: 0.5rem;
         font-weight: 400;
     }
 }
@@ -651,21 +669,23 @@ header{
 }
 .profileInfoContainer h1{
     display: inline;
-    font-size: 4rem;
+    font-size: 3rem;
+    font-weight: 700;
 }
 .profileInfoContainer h3{
     display: inline;
-    padding-left: 2rem;
-    font-size: 1.4rem;
+    padding-left: 1rem;
+    font-size: 1.2rem;
 }
 .profileInfoContainer h2{
-    padding-top: 0.5rem;
-    font-size: 1.4rem;
+    padding-top: 1rem;
+    font-size: 1.3rem;
+    font-weight: 500;
 }
 .profileInfoLink{
     width: fit-content;
     display: block;
-    padding: 0.4rem 0rem 0rem 0rem;
+    padding: 0.1rem 0rem 0rem 0rem;
 }
 .profileInfoContainer a{
     transition-duration: 0.3s;
@@ -673,13 +693,15 @@ header{
 }
 .profileInfoLink img{
     display: inline;
+    position: relative;
+    top: 0.3rem;
     width: 1.4rem;
     height: 1.4rem;
 }
 .profileInfoLink p{
     padding-left: 1rem;
     position: relative;
-    top: -0.33rem;
+    top: 0rem;
     display: inline;
 }
 .profileInfoContainer a:hover{
@@ -696,7 +718,42 @@ header{
     .profileInfoContainer h3{
         display: block;
         padding-left: 0px;
-        font-size: 1.4rem;
+        padding-top: 0.4rem;
+        font-size: 1.2rem;
+    }
+    .profileInfoContainer h1{
+        font-size: 2.5rem;
+    }
+    .profileInfoContainer h2{
+        font-size: 1.3rem;
+        line-height: 1.9rem;
+    }
+}
+@media screen and (max-width:600px) {
+    .profileImg{
+        background-color: var(--LightGray);
+        width: 80vw;
+        height: 80vw;
+        object-fit: cover;
+    }
+    .profileWrapper{
+        display: flex;
+        flex-direction: column;
+        width: 80vw;
+        gap: 3vw;
+    }
+    .profileInfoContainer{
+        justify-content: start;
+    }
+    .profileInfoContainer h1{
+        font-size: 2.5rem;
+        margin-top: 1rem;
+    }
+    .profileInfoContainer h2{
+        font-size: 1.3rem;
+        line-height: 1.9rem;
+        margin-top: 0.2rem;
+        padding-bottom: 3rem;
     }
 }
 
@@ -842,8 +899,8 @@ header{
     align-items: top;
 }
 #about p{
-    width: 50rem;
     white-space:pre-line;
+    max-width: 70rem;
 }
 #about h3{
     font-size: 1rem;
@@ -895,15 +952,23 @@ header{
         background-color: var(--LightGray);
     }
 }
-@media screen and (max-width:850px){
-    #about p{
-
-    }
-}
 @media screen and (max-width:650px){
     .creditCol{
         flex-direction: column;
         gap: 50px !important;
+    }
+}
+.aboutBg0{
+    display: none;
+}
+@media screen and (min-width:700px){
+    .aboutBg0{
+        display: block;
+        position: absolute;
+        right: 10vw;
+        top: 15rem;
+        z-index: -10;
+        width: 25rem;
     }
 }
 
@@ -944,6 +1009,7 @@ header{
 
 .bgGray{background-color: var(--Gray);}
 .bgLighterGray{background-color: var(--LighterGray);}
+.bgHighlight{background-color: var(--Highlight);}
 .cBlack{color: var(--Black);}
 .cGray{color:var(--Gray)}
 
@@ -982,10 +1048,8 @@ footer{
     background-color: var(--LighterGray);
 }
 .footerLogo{
-    width: 7rem;
     height: 2.7rem;
-    background-color: purple;
-    object-fit: contain; 
+    object-fit: cover; 
 }
 .footerLinks{
     display: flex;

@@ -1,5 +1,5 @@
 
-                        <a href="profiletest.html" class="itemDrag">
+                        <a href="profiles/$ID.html" class="itemDrag">
                             <div class="studentContainerM">
                                 <div class="studentThumbnailM"></div>
                                 <div class="studentListNameM textOverflow">$NAME</div>
