@@ -854,7 +854,7 @@ header{
     padding-bottom: 50px;
 }
 .compSet2{
-    width: 80%;
+    width: 40%;
     margin-left: 10%;
     padding-top: 50px;
     padding-bottom: 50px;
@@ -919,6 +919,12 @@ header{
         height: 80vw;
         background-color: gray;
         object-fit: cover;
+    }
+    .compSet2{
+        width: 80%;
+        margin-left: 10%;
+        padding-top: 50px;
+        padding-bottom: 50px;
     }
 }
 

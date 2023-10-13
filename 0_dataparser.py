@@ -33,6 +33,8 @@ with open ("X/html_source/project_comp_text1.txt",'r',encoding='UTF-8') as file:
     html_project_comp_text1 = file.read()
 with open ("X/html_source/project_comp_text2.txt",'r',encoding='UTF-8') as file:
     html_project_comp_text2 = file.read()
+with open ("X/html_source/project_comp_text3.txt",'r',encoding='UTF-8') as file:
+    html_project_comp_text3 = file.read()
 with open ("X/html_source/project_comp_youtube.txt",'r',encoding='UTF-8') as file:
     html_project_comp_youtube = file.read()
 with open ("X/html_source/project_comp_vimeo.txt",'r',encoding='UTF-8') as file:
@@ -237,6 +239,11 @@ for key, info in project_list.items():
             _comp += html_project_comp_text2.\
                        replace("$CONTENT1",_temp[1]).\
                         replace("$CONTENT2",_temp[2])
+        elif _temp[0] == "text_3":
+            # sub_header
+            _comp += html_project_comp_text3.\
+                        replace("$CONTENT1",_temp[1]).\
+                        replace("$CONTENT2",_temp[2])
         elif _temp[0] == "image":
             # image
             _comp += html_project_comp_image.\
@@ -254,7 +261,7 @@ for key, info in project_list.items():
             # link
             _comp += html_project_comp_link.\
                        replace("$CONTENT1",_temp[1]).\
-                       replace("$CONTENT2",_temp[2])
+                       replace("$CONTENT2",_temp[2] if _temp[2].startswith("http") else "https://" + _temp[2])
     
 
 
