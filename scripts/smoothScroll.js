@@ -18,8 +18,7 @@ let unscaledDeltaScroll = 0;
 let prevTimeStamp,deltaTime;
 var OnScroll = function(){};
 
-
-window.addEventListener("load", onLoad);
+if(window.innerWidth > 600) window.addEventListener("load", onLoad);
 
 function onLoad() {
   viewport.style.overflowY = "hidden";
