@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1788.27 925.91">
+  <defs>
+    <style>
+      .cls-1, .cls-2, .cls-3 {
+        fill: #fff;
+      }
+
+      .cls-4 {
+        stroke: #231f20;
+      }
+
+      .cls-4, .cls-5, .cls-6, .cls-7, .cls-8, .cls-9, .cls-10 {
+        stroke-miterlimit: 10;
+      }
+
+      .cls-4, .cls-5, .cls-6, .cls-8, .cls-10 {
+        fill: none;
+      }
+
+      .cls-4, .cls-10 {
+        stroke-width: 5px;
+      }
+
+      .cls-11 {
+        font-family: Pretendard-ExtraBold-KSCpc-EUC-H, Pretendard;
+        font-size: 31.81px;
+        font-weight: 700;
+      }
+
+      .cls-11, .cls-7, .cls-9, .cls-12 {
+        fill: #0096fa;
+      }
+
+      .cls-5, .cls-7 {
+        stroke: #fff;
+      }
+
+      .cls-5, .cls-7, .cls-8, .cls-9 {
+        stroke-width: 4.17px;
+      }
+
+      .cls-6 {
+        stroke-width: 6.71px;
+      }
+
+      .cls-6, .cls-8, .cls-9 {
+        stroke: #0096fa;
+      }
+
+      .cls-2 {
+        font-size: 27.68px;
+      }
+
+      .cls-2, .cls-3 {
+        font-family: OCRAExtended, 'OCR A Extended';
+      }
+
+      .cls-10 {
+        stroke: #000;
+      }
+
+      .cls-3 {
+        font-size: 30px;
+      }
+    </style>
+  </defs>
+  <g id="intro">
+    <g id="graphic">
+      <path class="cls-1" d="m834.43,363.69v-115.26h-440.31c-43.49-46.24-184.78-46.24-184.78-46.24v46.24H19.69v367.26h379.69v-88.14h288.15v-74.36l41.39-21.85c-1.92,5.17-2.98,10.75-2.98,16.59,0,26.29,21.32,47.61,47.61,47.61s47.61-21.32,47.61-47.61c0-24.24-18.12-44.23-41.54-47.21v-37.02h54.81Z"/>
+      <rect class="cls-1" x="992.8" y="436.37" width="387.62" height="207.44" rx="103.72" ry="103.72"/>
+      <rect class="cls-1" x="0" y="718.46" width="387.62" height="207.44" rx="103.72" ry="103.72"/>
+      <polygon class="cls-1" points="1770.9 6.54 1430.83 6.54 1430.83 275.62 1303.71 275.62 1303.71 369.72 1678.45 369.72 1678.45 322.67 1770.9 322.67 1770.9 6.54"/>
+      <line class="cls-6" x1="1739.03" y1="92.04" x2="1616.31" y2="92.04"/>
+      <polyline class="cls-6" points="1695.29 38.79 1739.03 91.89 1695.29 147.16"/>
+      <circle class="cls-12" cx="1613.22" cy="92.04" r="9.21"/>
+      <circle class="cls-12" cx="1696.19" cy="40.21" r="9.21"/>
+      <circle class="cls-12" cx="1696.19" cy="145.95" r="9.21"/>
+      <circle class="cls-12" cx="1737.36" cy="92.04" r="9.21"/>
+      <text class="cls-11" transform="translate(1431.08 334.16)"><tspan x="0" y="0">전시 보러가기</tspan></text>
+      <polygon class="cls-1" points="1206.56 165.65 872.74 165.65 938.75 0 1272.57 0 1206.56 165.65"/>
+      <polygon class="cls-1" points="1362.42 914.45 850.42 914.45 931.89 710.01 1443.88 710.01 1362.42 914.45"/>
+      <polygon class="cls-1" points="1613.22 469.71 1438.18 570.34 1613.22 670.96 1788.27 570.34 1613.22 469.71"/>
+      <g>
+        <circle class="cls-1" cx="1258.29" cy="324.28" r="7.5"/>
+        <circle class="cls-1" cx="1228.41" cy="356.46" r="7.5"/>
+        <circle class="cls-1" cx="1228.35" cy="291.6" r="7.5"/>
+        <circle class="cls-1" cx="1062.03" cy="324.28" r="7.5"/>
+        <circle class="cls-1" cx="791.86" cy="593.88" r="7.5"/>
+        <g>
+          <line class="cls-7" x1="1259.14" y1="324.28" x2="1062.03" y2="324.28"/>
+          <line class="cls-7" x1="1062.49" y1="323.25" x2="793.99" y2="591.75"/>
+          <polyline class="cls-5" points="1228.41 356.46 1259.29 324.27 1228.35 292.03"/>
+        </g>
+      </g>
+      <rect class="cls-1" x="1522.25" y="744.59" width="242.11" height="168.8"/>
+      <path class="cls-1" d="m473.22,652.7v142.29c26.96,59.47,141.92,60.85,171.17-1.42,26.24-55.85,137.64-59.43,166.19-2.08v-138.79h-337.37Z"/>
+    </g>
+    <g id="Layer_9" data-name="Layer 9">
+      <g>
+        <circle class="cls-12" cx="523.71" cy="300.87" r="7.5"/>
+        <circle class="cls-12" cx="525.34" cy="344.75" r="7.5"/>
+        <circle class="cls-12" cx="479.44" cy="298.93" r="7.5"/>
+        <circle class="cls-12" cx="288.01" cy="536.57" r="7.5"/>
+        <circle class="cls-12" cx="95.66" cy="536.57" r="7.5"/>
+        <g>
+          <line class="cls-9" x1="524.32" y1="300.27" x2="288.01" y2="536.57"/>
+          <line class="cls-9" x1="288.01" y1="536.57" x2="95.66" y2="536.57"/>
+          <polyline class="cls-8" points="525.34 344.75 524.42 300.16 479.74 299.24"/>
+        </g>
+      </g>
+    </g>
+    <g id="text">
+      <text class="cls-2" transform="translate(1328.3 423.7)"><tspan x="0" y="0">(We are pathfinders)</tspan></text>
+      <text class="cls-2" transform="translate(440.83 583.85)"><tspan x="0" y="0">(Finding one’s path)</tspan></text>
+    </g>
+    <g id="Layer_6" data-name="Layer 6">
+      <circle cx="1345.6" cy="323.03" r="20"/>
+      <circle cx="631.9" cy="464.39" r="20"/>
+      <circle cx="955.29" cy="81.25" r="20"/>
+      <circle cx="1190.99" cy="81.25" r="20"/>
+      <circle cx="1468.35" cy="81.34" r="20"/>
+      <circle cx="1183.48" cy="469.31" r="20"/>
+      <circle cx="1613.22" cy="560.09" r="20"/>
+      <circle cx="1183.48" cy="607.6" r="20"/>
+      <circle cx="360.03" cy="464.39" r="20"/>
+      <circle cx="153.81" cy="328.1" r="20"/>
+    </g>
+    <g id="network">
+      <line class="cls-10" x1="153.81" y1="328.1" x2="360.03" y2="464.39"/>
+      <line class="cls-10" x1="955.29" y1="81.25" x2="153.81" y2="328.1"/>
+      <line class="cls-10" x1="631.9" y1="464.39" x2="360.03" y2="464.39"/>
+      <line class="cls-10" x1="955.29" y1="81.25" x2="631.9" y2="464.39"/>
+      <line class="cls-10" x1="153.81" y1="328.1" x2="631.9" y2="464.39"/>
+      <line class="cls-10" x1="1183.48" y1="469.31" x2="1183.48" y2="607.6"/>
+      <line class="cls-10" x1="1613.22" y1="560.09" x2="1183.48" y2="607.6"/>
+      <line class="cls-10" x1="1183.48" y1="469.31" x2="1613.22" y2="560.09"/>
+      <line class="cls-10" x1="1190.99" y1="81.25" x2="1345.6" y2="323.03"/>
+      <line class="cls-10" x1="1468.35" y1="81.34" x2="1191.08" y2="81.25"/>
+      <line class="cls-10" x1="1345.6" y1="323.03" x2="1468.35" y2="81.34"/>
+      <line class="cls-4" x1="631.9" y1="464.39" x2="1183.48" y2="607.6"/>
+      <line class="cls-4" x1="1183.48" y1="469.31" x2="955.29" y2="81.25"/>
+      <line class="cls-4" x1="1191.08" y1="81.25" x2="955.29" y2="81.25"/>
+      <line class="cls-4" x1="1345.6" y1="323.03" x2="1183.48" y2="469.31"/>
+      <line class="cls-4" x1="1613.22" y1="560.09" x2="1345.6" y2="323.03"/>
+    </g>
+    <g id="number">
+      <text class="cls-3" transform="translate(351.51 474.28)"><tspan x="0" y="0">1</tspan></text>
+      <text class="cls-3" transform="translate(622.77 474.28)"><tspan x="0" y="0">2</tspan></text>
+      <text class="cls-3" transform="translate(945.57 91.17)"><tspan x="0" y="0">4</tspan></text>
+      <text class="cls-3" transform="translate(1181.42 90.86)"><tspan x="0" y="0">1</tspan></text>
+      <text class="cls-3" transform="translate(1458.78 90.96)"><tspan x="0" y="0">3</tspan></text>
+      <text class="cls-3" transform="translate(1335.98 332.99)"><tspan x="0" y="0">2</tspan></text>
+      <text class="cls-3" transform="translate(1174.27 616.85)"><tspan x="0" y="0">2</tspan></text>
+      <text class="cls-3" transform="translate(1603.7 570.34)"><tspan x="0" y="0">3</tspan></text>
+      <text class="cls-3" transform="translate(1174.27 479.27)"><tspan x="0" y="0">1</tspan></text>
+      <text class="cls-3" transform="translate(144.33 337.2)"><tspan x="0" y="0">3</tspan></text>
+    </g>
+  </g>
+</svg>

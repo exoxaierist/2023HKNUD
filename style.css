@@ -455,6 +455,9 @@ header{
     .itemCategory{
         display: none;
     }
+    .itemThumbnail{
+        border-radius: 5px !important;
+    }
 }
 
 .itemContainer:hover .itemHoverInfo{
