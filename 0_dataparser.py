@@ -4,7 +4,7 @@ import os
 import re
 
 # directories
-dir_csv_id = "/X/1010_idlist.csv"
+dir_csv_id = "/X/1020_idlist.csv"
 dir_csv_profile = "/X/1010_profile.csv"
 dir_csv_project = "/X/csvs"
 dir_target_project = "/projects"
@@ -205,7 +205,7 @@ with open(target_students,'w',encoding='UTF-8') as file:
 
 # create project html files
 for key, info in project_list.items():
-    #print("writing project : ", key)
+    print("writing project : ", key)
     html = open(dir_target_project.removeprefix('/') + '/' + key + ".html",'w',encoding="UTF-8")
     
     # student info
@@ -287,7 +287,7 @@ for key, info in project_list.items():
 # create profile html files
 
 for key,info in student_list.items():
-    #print("writing profile : ", key)
+    print("writing profile : ", key)
     html = open(dir_target_profile.removeprefix('/') + '/' + key + ".html",'w',encoding="UTF-8")
     
     _write_link =""
