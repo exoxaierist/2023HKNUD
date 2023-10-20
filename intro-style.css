@@ -157,8 +157,16 @@ hr{
 .logoMobile{
     display: none;
 }
-a h1{
+.btnMobile{
     display: none;
+}
+
+.btnPc{
+    position: fixed;
+    left: 72vw;
+    top: 3vw;
+    width: 25vw;
+    height: 20vw;
 }
 
 
@@ -228,7 +236,6 @@ a h1{
         width: 86vw;
         padding-top: 2rem;
         padding-left: 7vw;
-        height: 104vw;
     }
     .logoMobile{
         display: unset;
@@ -239,7 +246,7 @@ a h1{
         padding-bottom: 0.5rem;
     }
 
-    a h1{
+    .btnMobile{
         width: 83vw;
         margin-left: 7vw;
         margin-top: 2rem;
