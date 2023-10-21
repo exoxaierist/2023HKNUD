@@ -1,7 +1,7 @@
 
                         <a href="profiles/$ID.html" class="itemDrag">
                             <div class="studentContainerM">
-                                <div class="studentThumbnailM"></div>
+                                <div class="studentThumbnailM" style="background-image: url(image/profile/$ID.jpg); background-size: cover;"></div>
                                 <div class="studentListNameM textOverflow">$NAME</div>
                                 <div class="studentListRoleM textOverflow">$CAREER</div>
                             </div>
