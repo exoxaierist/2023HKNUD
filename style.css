@@ -634,7 +634,7 @@ header{
         width: 30vw;
         top: 2.7rem;
         left: 1rem;
-        font-size: 0.5rem;
+        font-size: 0.8rem;
         font-weight: 400;
     }
 }
@@ -819,7 +819,11 @@ header{
     padding-top: 4rem;
     padding-bottom: 4rem;
 }
-.projectInfo a{padding: 4px;transition-duration: 0.1s;}
+.projectInfo a{
+    margin-right: 0.5rem;
+    padding-bottom: 0.3rem;
+    transition-duration: 0.1s;
+}
 .projectInfo a:hover{
     border-width: 0px 0px 3px 0px;
     border-style: solid;
@@ -836,7 +840,8 @@ header{
 .nameContainer{
     display: flex;
     flex-wrap: wrap;
-    gap: 5px;
+    gap: 0.5rem;
+    row-gap: 0.7rem;
 }
 .compYoutube{
     padding-top: 25px;
@@ -948,14 +953,14 @@ header{
     align-items: top;
 }
 #about p{
-    white-space:pre-line;
-    max-width: 70rem;
+    max-width: 40rem;
 }
 #about h3{
     font-size: 1rem;
 }
 #about h2{
-    font-size:4rem;
+    font-size:3.5rem;
+    margin-bottom: 1rem;
 }
 .aboutImg{
     width: 22rem;
@@ -1006,6 +1011,10 @@ header{
         flex-direction: column;
         gap: 50px !important;
     }
+    #about h2{
+        font-size:2.5rem !important;
+        margin-bottom: 1rem;
+    }
 }
 .aboutBg0{
     display: none;
@@ -1019,6 +1028,8 @@ header{
         z-index: -10;
         width: 25rem;
     }
+
+    
 }
 
 
@@ -1122,5 +1133,9 @@ footer a:hover{font-weight: 900; color: var(--Highlight);}
         align-items: start;
         gap: 1rem;
         background-color: var(--LighterGray);
+    }
+    .footerLinks{
+        flex-direction: column;
+        padding: 2rem 0rem;
     }
 }
