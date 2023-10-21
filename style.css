@@ -143,6 +143,9 @@ header{
     left: calc(90vw + 5vw - 1rem);
     top: 4rem;
     transition: opacity 0.3s;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 5px;
+    padding: 2px;
 }
 .navPageTop{
     position: fixed;
@@ -150,6 +153,9 @@ header{
     height: 2rem;
     left: calc(90vw + 5vw - 1rem);
     bottom: 8rem;
+    background-color: rgba(255, 255, 255, 0.5);
+    padding: 2px;
+    border-radius: 5px;
 }
 .navPageBottom{
     position: fixed;
@@ -157,6 +163,9 @@ header{
     height: 2rem;
     left: calc(90vw + 5vw - 1rem);
     bottom: 4rem;
+    background-color: rgba(255, 255, 255, 0.5);
+    padding: 2px;
+    border-radius: 5px;
 }
 
 #navOverlayBtnGroup{
@@ -357,15 +366,20 @@ header{
     border-bottom-color: var(--Highlight);
 }
 .allBtn{
-    font-weight: 400;
-    padding: 8px 12px 8px 12px; 
-    border-width: 0px;
-    background-color: var(--LighterGray);
+    font-size: 1.1rem;
+    font-weight: 500;
+    padding: 8px 12px 8px 12px;
+
+    border-radius: 15px;
+    border-style: solid;
+    border-bottom-width: 2px;
+    border-color: transparent;
+    background-color: transparent;
+    transition: 0.3s;
 }
 .allBtn.clicked{
-    font-weight: 400;
-    background-color: var(--Highlight);
-    color: var(--White);
+    font-weight: 900;
+    border-bottom-color: var(--Highlight);
 }
 
 
