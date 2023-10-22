@@ -5,7 +5,7 @@ import re
 
 # directories
 dir_csv_id = "/X/1020_idlist.csv"
-dir_csv_profile = "/X/1010_profile.csv"
+dir_csv_profile = "/X/1022_profile.csv"
 dir_csv_project = "/X/csvs"
 dir_target_project = "/projects"
 dir_target_profile = "/profiles"
@@ -15,6 +15,12 @@ target_archive = str("archive.html")
 target_students = str("students.html")
 
 id_list = []
+size_exclude = ["vp_2019286002","vp_f2f","vp_2020820021","vp_2022820098","bm_unioncuffs","bm_adc","vp_2022820094"
+                "dp_2019286017","vp_2020820005","dp_2019286065","vp_dontignoreninexfive","bm_2019286036",
+                "bm_2020820022","bm_2020820005","vp_2020820044","bm_2020820044","dp_2019286013","dp_2019286044"
+                ,"vp_2020820026","bm_2020820026","vp_2022820101","vp_2022820022","bm_2019286011",]
+error_exclude = []
+
 id_dict = {}
 project_list = {}
 student_list = {}

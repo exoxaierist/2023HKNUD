@@ -2,7 +2,7 @@
 수업분류,Digital Project,,,참여자(학번),2019286044
 "태그
 (선택지에서만 고를것)",표기되는 태그 (필수),,숨겨진 태그 (선택),,
-,UXUI,,Graphic,,
+,UXUI,,UXUI,,
 프로젝트 타이틀,OWN BANK,,,,
 슬로건,저금하는 즐거움을 창출하는 개인 맞춤 적금 서비스,,,,
 상세설명,"온뱅크는 저금을 새로운 경험을 창출하는 즐거움으로 인식할 수 있도록 합니다.
@@ -10,11 +10,11 @@
 적금의 목표를 상기시켜 주고 저금하는 행위 자체에 재미를 붙일 수 있는 컨텐츠들을 합쳐, 목적에 따른 다양한 적금 서비스를 제공합니다. ",,,,
 프로젝트 상세페이지 구성,,,,,
 종류,내용1,내용2,,,
-image,own_main.png,overview,,,
-image,user research.gif,user resarch,,,
-image,own1.png,감정적금,,,
-image,own2.png,여행적금,,,
-image,own3.png,효도적금,,,
-image,own4.png,커스텀적금,,,
+image,own_main.png,,,,
+image,user research.gif,,,,
+image,own1.png,,,,
+image,own2.png,,,,
+image,own3.png,,,,
+image,own4.png,,,,
 link,피그마 프로토타입,figma.com/...,,,
 link,비헨스 프로젝트 링크,behance.net/...,,,
