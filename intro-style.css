@@ -48,13 +48,48 @@ body{
     background-color: transparent;
 }
 
-
-
+.filler{
+    height: 55vw;
+}
+.mainContainer{
+    position: absolute;
+    top: 3vw;
+    left: 3vw;
+    z-index: -10;
+}
 .main{
     width: 94vw;
-    padding-left: 3vw;
-    padding-top: 3vw;
+    position: inherit;
 }
+svg{
+    position: inherit;
+    width: 94vw;
+}
+.path{
+    animation: pathAnimate 5s cubic-bezier(0.3,0,0.7,1) infinite;
+    fill: none;
+    stroke: #000;
+    stroke-dasharray: 1 200;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-width: 40px;
+    transition-duration: 0.2s;
+}
+.locator{
+    position: inherit;
+    width: 10px;
+    height: 10px;
+    z-index: 10;
+}
+
+
+
+@keyframes pathAnimate {
+    to{
+        stroke-dashoffset: -1005;
+    }
+}
+
 .mobile{
     display: none;
 }
