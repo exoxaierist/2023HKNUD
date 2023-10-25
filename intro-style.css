@@ -265,7 +265,12 @@ hr{
         width: 86vw;
         padding-left: 7vw;
     }
-
+    .mainContainer{
+        display: none;
+    }
+.filler{
+    display: none;
+}
     .mobile{
         display: unset;
         width: 86vw;

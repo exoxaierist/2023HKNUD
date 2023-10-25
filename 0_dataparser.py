@@ -5,7 +5,7 @@ import re
 
 # directories
 dir_csv_id = "/X/1020_idlist.csv"
-dir_csv_profile = "/X/1022_profile.csv"
+dir_csv_profile = "/X/1024_profile.csv"
 dir_csv_project = "/X/csvs"
 dir_target_project = "/projects"
 dir_target_profile = "/profiles"
