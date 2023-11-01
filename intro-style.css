@@ -81,6 +81,15 @@ svg{
     height: 10px;
     z-index: 10;
 }
+.welcomeText{
+    position: inherit;
+    font-size: 1.8rem;
+    font-weight: 800;
+    width: 20vw;
+    left: 74vw;
+    top: 15.2vw;
+    color: var(--Highlight);
+}
 
 
 
