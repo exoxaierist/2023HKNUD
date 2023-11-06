@@ -1007,6 +1007,8 @@ header{
     display: flex;
     justify-content: space-between;
     width: 80vw;
+    height: 10rem;
+    padding-top: 2rem;
 }
 .sponsorTitle{
     padding: 0rem 0rem 1rem 0rem;
@@ -1028,6 +1030,14 @@ header{
     font-size: 1.2rem;
     font-weight: 500;
     margin-top: 0.6rem;
+}
+
+#sponsorIdv{
+    display: flex;
+    padding-top: 2rem;
+}
+#sponsorIdv p{
+    width: 4rem;
 }
 
 @media screen and (max-width:1350px){
@@ -1059,9 +1069,11 @@ header{
     }
     #sponsor{
         display: flex;
-        justify-content: space-between;
+        justify-content: left;
         flex-direction: column;
+        padding-top: 2rem;
         width: 80vw;
+        height: 25rem;
         gap: 6rem;
     }
 }
